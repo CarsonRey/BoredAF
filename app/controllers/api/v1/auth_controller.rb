@@ -1,3 +1,5 @@
+require 'jwt'
+
 class Api::V1::AuthController < ApplicationController
 
   def create
@@ -5,7 +7,6 @@ class Api::V1::AuthController < ApplicationController
     if user && user.authenticate(login_user_params[:password])
       token = JWT.encode({user_id: user.id}, 'SECRET')
       render json: {user: user, jwt: token}
-    else
       render json: {error: ""}, status: 400
     end
   end
@@ -21,7 +22,7 @@ class Api::V1::AuthController < ApplicationController
   private
 
  def login_user_params
-   params.require(:user).permit(:username, :password_digest)
+   params.require(:user).permit(:username, :password)
  end
 
 

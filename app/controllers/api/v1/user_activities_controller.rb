@@ -1,2 +1,3 @@
 class UserActivitiesController < ApplicationController
+
 end
