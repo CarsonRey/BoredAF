@@ -6,7 +6,6 @@ class CreateActivities < ActiveRecord::Migration[5.2]
       t.integer :participants
       t.integer :price
       t.string :link, default: ""
-      
       t.timestamps
     end
   end
