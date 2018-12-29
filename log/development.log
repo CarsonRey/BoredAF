@@ -1505,3 +1505,2502 @@ Processing by Api::V1::AuthController#create as */*
 Completed 200 OK in 112ms (Views: 7.9ms | ActiveRecord: 22.0ms)
 
 
+Started POST "/api/v1/login" for ::1 at 2018-12-29 00:13:23 -0500
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "NotCool"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.2ms)
+Completed 500 Internal Server Error in 103ms (Views: 8.5ms | ActiveRecord: 10.4ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/api/v1/auth_controller.rb:10:in `create'
+Started POST "/api/v1/login" for ::1 at 2018-12-29 00:13:55 -0500
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "NotCool"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:6
+Completed 500 Internal Server Error in 511039ms (ActiveRecord: 10.2ms)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/api/v1/auth_controller.rb:8:in `create'
+Started GET "/api/v1/users" for ::1 at 2018-12-29 00:22:37 -0500
+Processing by Api::V1::UsersController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers]   [1m[36mActivity Load (1.5ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "user_activities" ON "activities"."id" = "user_activities"."activity_id" WHERE "user_activities"."user_id" = $1[0m  [["user_id", 7]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers]   [1m[36mActivity Load (1.8ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "user_activities" ON "activities"."id" = "user_activities"."activity_id" WHERE "user_activities"."user_id" = $1[0m  [["user_id", 8]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (245.39ms)
+Completed 200 OK in 281ms (Views: 260.0ms | ActiveRecord: 17.8ms)
+
+
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 07:41:33 -0500
+Processing by Api::V1::AuthController#show as */*
+Completed 500 Internal Server Error in 1360ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `current_user' for #<Api::V1::AuthController:0x00007fb0d75c3b88>):
+  
+app/controllers/api/v1/auth_controller.rb:16:in `show'
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 07:49:19 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+Completed 500 Internal Server Error in 74ms (ActiveRecord: 0.0ms)
+
+
+  
+JWT::DecodeError (Not enough or too many segments):
+  
+app/controllers/application_controller.rb:9:in `decode_token'
+app/controllers/application_controller.rb:17:in `current_user'
+app/controllers/api/v1/auth_controller.rb:16:in `show'
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 07:51:08 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+JWT::DecodeError (Not enough or too many segments):
+  
+app/controllers/application_controller.rb:9:in `decode_token'
+app/controllers/application_controller.rb:17:in `current_user'
+app/controllers/api/v1/auth_controller.rb:16:in `show'
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 07:52:13 -0500
+Started POST "/api/v1/login" for ::1 at 2018-12-29 07:52:13 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+
+  
+JWT::DecodeError (Not enough or too many segments):
+  
+app/controllers/application_controller.rb:9:in `decode_token'
+app/controllers/application_controller.rb:17:in `current_user'
+app/controllers/api/v1/auth_controller.rb:16:in `show'
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "NotCool"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:6
+Completed 500 Internal Server Error in 486858ms (ActiveRecord: 18.1ms)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `params'
+app/controllers/api/v1/auth_controller.rb:26:in `login_user_params'
+app/controllers/api/v1/auth_controller.rb:8:in `create'
+Started GET "/api/v1/users" for ::1 at 2018-12-29 08:09:09 -0500
+  [1m[35m (44.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/carsonrey/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::UsersController#index as HTML
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+
+  
+JWT::DecodeError (Nil JSON web token):
+  
+app/controllers/application_controller.rb:9:in `decode_token'
+app/controllers/application_controller.rb:17:in `current_user'
+app/controllers/api/v1/users_controller.rb:6:in `index'
+Started POST "/api/v1/login" for ::1 at 2018-12-29 08:11:40 -0500
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 08:11:40 -0500
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "NotCool"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:6
+Completed 500 Internal Server Error in 28914ms (ActiveRecord: 10.5ms)
+
+
+  
+JWT::DecodeError (Nil JSON web token):
+  
+app/controllers/application_controller.rb:9:in `decode_token'
+app/controllers/application_controller.rb:17:in `current_user'
+app/controllers/api/v1/auth_controller.rb:10:in `create'
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+JWT::DecodeError (Nil JSON web token):
+  
+app/controllers/application_controller.rb:9:in `decode_token'
+app/controllers/application_controller.rb:17:in `current_user'
+app/controllers/api/v1/auth_controller.rb:16:in `show'
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 08:13:22 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+
+  
+JWT::DecodeError (Not enough or too many segments):
+  
+app/controllers/application_controller.rb:9:in `decode_token'
+app/controllers/application_controller.rb:17:in `current_user'
+app/controllers/api/v1/auth_controller.rb:16:in `show'
+Started POST "/api/v1/login" for ::1 at 2018-12-29 08:13:35 -0500
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "NotCool"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:6
+Completed 500 Internal Server Error in 100ms (ActiveRecord: 20.8ms)
+
+
+  
+JWT::DecodeError (Nil JSON web token):
+  
+app/controllers/application_controller.rb:9:in `decode_token'
+app/controllers/application_controller.rb:17:in `current_user'
+app/controllers/api/v1/auth_controller.rb:10:in `create'
+Started POST "/api/v1/login" for ::1 at 2018-12-29 08:14:00 -0500
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "NotCool"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:6
+Completed 500 Internal Server Error in 195086ms (ActiveRecord: 17.2ms)
+
+
+  
+JWT::DecodeError (Nil JSON web token):
+  
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:18:in `current_user'
+app/controllers/api/v1/auth_controller.rb:10:in `create'
+Started GET "/api/v1/users" for ::1 at 2018-12-29 08:17:27 -0500
+Processing by Api::V1::UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/controllers/application_controller.rb:14
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/carsonrey/.rvm/rubies/ruby-2.5.3/lib/ruby/gems/2.5.0/gems/did_you_mean-1.2.0/lib/did_you_mean/core_ext/name_error.rb:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+Started POST "/api/v1/login" for ::1 at 2018-12-29 08:22:59 -0500
+  ↳ /Users/carsonrey/.rvm/rubies/ruby-2.5.3/lib/ruby/gems/2.5.0/gems/did_you_mean-1.2.0/lib/did_you_mean/core_ext/name_error.rb:8
+Completed 500 Internal Server Error in 332319ms (ActiveRecord: 11.0ms)
+
+
+  
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /Users/carsonrey/.rvm/rubies/ruby-2.5.3/lib/ruby/gems/2.5.0/gems/did_you_mean-1.2.0/lib/did_you_mean/core_ext/name_error.rb:8
+NoMethodError (undefined method `authorization' for #<ActionDispatch::Http::Headers:0x00007fca124b8d48>):
+  
+app/controllers/application_controller.rb:14:in `get_token'
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:18:in `current_user'
+app/controllers/api/v1/users_controller.rb:6:in `index'
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "NotCool"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:6
+Completed 500 Internal Server Error in 55954ms (ActiveRecord: 15.0ms)
+
+
+  
+NoMethodError (undefined method `authorization' for #<ActionDispatch::Http::Headers:0x00007fca0cd97398>):
+  
+app/controllers/application_controller.rb:14:in `get_token'
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:18:in `current_user'
+app/controllers/api/v1/auth_controller.rb:10:in `create'
+Started GET "/api/v1/users" for ::1 at 2018-12-29 08:24:05 -0500
+Processing by Api::V1::UsersController#index as HTML
+Completed 500 Internal Server Error in 42707ms (ActiveRecord: 0.0ms)
+
+
+  
+JWT::DecodeError (Nil JSON web token):
+  
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:18:in `current_user'
+app/controllers/api/v1/users_controller.rb:6:in `index'
+Started POST "/api/v1/login" for ::1 at 2018-12-29 08:24:48 -0500
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "NotCool"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:6
+Completed 500 Internal Server Error in 1809ms (ActiveRecord: 13.2ms)
+
+
+  
+JWT::DecodeError (Nil JSON web token):
+  
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:18:in `current_user'
+app/controllers/api/v1/auth_controller.rb:10:in `create'
+Started POST "/api/v1/login" for ::1 at 2018-12-29 08:30:47 -0500
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/carsonrey/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "NotCool"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:6
+Completed 500 Internal Server Error in 56641ms (ActiveRecord: 8.5ms)
+
+
+  
+JWT::DecodeError (Nil JSON web token):
+  
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:18:in `current_user'
+app/controllers/api/v1/auth_controller.rb:10:in `create'
+Started POST "/api/v1/login" for ::1 at 2018-12-29 08:32:04 -0500
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "NotCool"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:6
+Completed 500 Internal Server Error in 72960ms (ActiveRecord: 8.0ms)
+
+
+  
+JWT::DecodeError (Nil JSON web token):
+  
+app/controllers/application_controller.rb:9:in `decode_token'
+app/controllers/application_controller.rb:18:in `current_user'
+app/controllers/api/v1/auth_controller.rb:10:in `create'
+Started POST "/api/v1/login" for ::1 at 2018-12-29 08:40:00 -0500
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "NotCool"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:6
+Completed 500 Internal Server Error in 492738ms (ActiveRecord: 15.3ms)
+
+
+Started GET "/api/v1/users" for ::1 at 2018-12-29 08:48:13 -0500
+Started GET "/api/v1/users" for ::1 at 2018-12-29 08:48:13 -0500
+Started GET "/api/v1/users" for ::1 at 2018-12-29 08:48:13 -0500
+  
+JWT::DecodeError (Nil JSON web token):
+  
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:19:in `current_user'
+app/controllers/api/v1/auth_controller.rb:10:in `create'
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 08:48:13 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+Completed 500 Internal Server Error in 2986ms (ActiveRecord: 0.0ms)
+
+
+  
+JWT::DecodeError (Not enough or too many segments):
+  
+Started POST "/api/v1/users" for ::1 at 2018-12-29 08:48:16 -0500
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:19:in `current_user'
+app/controllers/api/v1/auth_controller.rb:16:in `show'
+Processing by Api::V1::UsersController#create as */*
+  Parameters: {"user"=>{"username"=>"This is a Test", "password"=>"[FILTERED]"}}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/users_controller.rb:11
+  [1m[36mUser Create (1.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["username", "This is a Test"], ["password_digest", "$2a$10$gMEMwXs9t.DbI7BtB1yIFunfduD8ZU6CC.pQJzXrhU65Clceh5rLa"], ["created_at", "2018-12-29 13:48:16.879363"], ["updated_at", "2018-12-29 13:48:16.879363"]]
+Processing by Api::V1::UsersController#index as HTML
+  ↳ app/controllers/api/v1/users_controller.rb:11
+Completed 500 Internal Server Error in 1208ms (ActiveRecord: 0.0ms)
+
+
+  
+JWT::DecodeError (Nil JSON web token):
+  
+Processing by Api::V1::UsersController#index as HTML
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:19:in `current_user'
+app/controllers/api/v1/users_controller.rb:6:in `index'
+Processing by Api::V1::UsersController#index as HTML
+Completed 500 Internal Server Error in 972ms (ActiveRecord: 0.0ms)
+
+
+  [1m[35m (1036.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/users_controller.rb:11
+  
+Completed 500 Internal Server Error in 684ms (ActiveRecord: 0.0ms)
+
+
+  
+Completed 500 Internal Server Error in 3657ms (ActiveRecord: 1037.7ms)
+
+
+JWT::DecodeError (Nil JSON web token):
+  
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:19:in `current_user'
+app/controllers/api/v1/users_controller.rb:6:in `index'
+JWT::DecodeError (Nil JSON web token):
+  
+  
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:19:in `current_user'
+app/controllers/api/v1/users_controller.rb:6:in `index'
+JWT::DecodeError (Nil JSON web token):
+  
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:19:in `current_user'
+app/controllers/api/v1/users_controller.rb:14:in `create'
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 08:49:10 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+Started POST "/api/v1/login" for ::1 at 2018-12-29 08:51:35 -0500
+Completed 500 Internal Server Error in 144686ms (ActiveRecord: 0.0ms)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `headers'
+app/controllers/application_controller.rb:15:in `get_token'
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:19:in `current_user'
+app/controllers/api/v1/auth_controller.rb:16:in `show'
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 08:51:38 -0500
+  
+LoadError (Unable to autoload constant Api::V1::AuthController, expected /Users/carsonrey/BoredAF-NY/backend-bored-af-ny/app/controllers/api/v1/auth_controller.rb to define it):
+  
+activesupport (5.2.2) lib/active_support/dependencies.rb:511:in `load_missing_constant'
+bootsnap (1.3.2) lib/bootsnap/load_path_cache/core_ext/active_support.rb:58:in `block in load_missing_constant'
+bootsnap (1.3.2) lib/bootsnap/load_path_cache/core_ext/active_support.rb:16:in `allow_bootsnap_retry'
+bootsnap (1.3.2) lib/bootsnap/load_path_cache/core_ext/active_support.rb:57:in `load_missing_constant'
+activesupport (5.2.2) lib/active_support/dependencies.rb:195:in `const_missing'
+activesupport (5.2.2) lib/active_support/inflector/methods.rb:285:in `const_get'
+activesupport (5.2.2) lib/active_support/inflector/methods.rb:285:in `block in constantize'
+activesupport (5.2.2) lib/active_support/inflector/methods.rb:281:in `each'
+activesupport (5.2.2) lib/active_support/inflector/methods.rb:281:in `inject'
+activesupport (5.2.2) lib/active_support/inflector/methods.rb:281:in `constantize'
+activesupport (5.2.2) lib/active_support/dependencies.rb:582:in `get'
+activesupport (5.2.2) lib/active_support/dependencies.rb:613:in `constantize'
+actionpack (5.2.2) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (5.2.2) lib/action_dispatch/http/parameters.rb:101:in `binary_params_for?'
+actionpack (5.2.2) lib/action_dispatch/http/parameters.rb:92:in `set_binary_encoding'
+actionpack (5.2.2) lib/action_dispatch/http/parameters.rb:69:in `path_parameters='
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+activerecord (5.2.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+Completed 500 Internal Server Error in 5892ms (ActiveRecord: 0.0ms)
+
+
+  
+JWT::DecodeError (Not enough or too many segments):
+  
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:19:in `current_user'
+app/controllers/api/v1/auth_controller.rb:16:in `show'
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 08:52:22 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+Completed 500 Internal Server Error in 20228ms (ActiveRecord: 0.0ms)
+
+
+  
+JWT::DecodeError (Not enough or too many segments):
+Started POST "/api/v1/login" for ::1 at 2018-12-29 08:52:42 -0500
+  
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:19:in `current_user'
+app/controllers/api/v1/auth_controller.rb:16:in `show'
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "NotCool"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:6
+Completed 500 Internal Server Error in 62966ms (ActiveRecord: 14.6ms)
+
+
+  
+JWT::DecodeError (Nil JSON web token):
+  
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:19:in `current_user'
+app/controllers/api/v1/auth_controller.rb:10:in `create'
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 08:53:45 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+Completed 500 Internal Server Error in 3216ms (ActiveRecord: 0.0ms)
+
+
+  
+JWT::DecodeError (Not enough or too many segments):
+  
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:19:in `current_user'
+app/controllers/api/v1/auth_controller.rb:16:in `show'
+Started POST "/api/v1/login" for ::1 at 2018-12-29 08:54:05 -0500
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (6.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "NotCool"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:6
+Completed 500 Internal Server Error in 15511ms (ActiveRecord: 6.4ms)
+
+
+  
+JWT::DecodeError (Nil JSON web token):
+  
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:19:in `current_user'
+app/controllers/api/v1/auth_controller.rb:10:in `create'
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 08:54:20 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+Completed 500 Internal Server Error in 1028ms (ActiveRecord: 0.0ms)
+
+
+  
+JWT::DecodeError (Not enough or too many segments):
+  
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:19:in `current_user'
+app/controllers/api/v1/auth_controller.rb:16:in `show'
+Started POST "/api/v1/login" for ::1 at 2018-12-29 08:55:22 -0500
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 08:55:23 -0500
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "NotCool"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:6
+Completed 500 Internal Server Error in 88ms (ActiveRecord: 10.2ms)
+
+
+  
+JWT::DecodeError (Nil JSON web token):
+  
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:19:in `current_user'
+app/controllers/api/v1/auth_controller.rb:10:in `create'
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+JWT::DecodeError (Not enough or too many segments):
+  
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:19:in `current_user'
+app/controllers/api/v1/auth_controller.rb:16:in `show'
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 08:55:47 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+JWT::DecodeError (Not enough or too many segments):
+  
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:19:in `current_user'
+app/controllers/api/v1/auth_controller.rb:16:in `show'
+Started POST "/api/v1/current_user" for ::1 at 2018-12-29 08:56:53 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+JWT::DecodeError (Not enough or too many segments):
+  
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:19:in `current_user'
+app/controllers/api/v1/auth_controller.rb:16:in `show'
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 08:58:54 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/current_user"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started POST "/api/v1/login" for ::1 at 2018-12-29 08:59:13 -0500
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 08:59:13 -0500
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "NotCool"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:6
+Completed 500 Internal Server Error in 95ms (ActiveRecord: 12.8ms)
+
+
+  
+JWT::DecodeError (Nil JSON web token):
+  
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:19:in `current_user'
+app/controllers/api/v1/auth_controller.rb:10:in `create'
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+
+  
+JWT::DecodeError (Not enough or too many segments):
+  
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:19:in `current_user'
+app/controllers/api/v1/auth_controller.rb:16:in `show'
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 09:02:23 -0500
+Processing by Api::V1::AuthController#show as */*
+Started POST "/api/v1/login" for ::1 at 2018-12-29 09:02:23 -0500
+  Parameters: {"auth"=>{}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+JWT::DecodeError (Not enough or too many segments):
+  
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:19:in `current_user'
+app/controllers/api/v1/auth_controller.rb:16:in `show'
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "NotCool"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:6
+Completed 500 Internal Server Error in 104ms (ActiveRecord: 18.5ms)
+
+
+  
+JWT::DecodeError (Nil JSON web token):
+  
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:19:in `current_user'
+app/controllers/api/v1/auth_controller.rb:10:in `create'
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 09:03:44 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `authorization' for #<ActionDispatch::Http::Headers:0x00007ff3d131da90>):
+  
+app/controllers/application_controller.rb:15:in `get_token'
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:19:in `current_user'
+app/controllers/api/v1/auth_controller.rb:16:in `show'
+Started POST "/api/v1/login" for ::1 at 2018-12-29 09:04:00 -0500
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "NotCool"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:6
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 09:04:00 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+Completed 500 Internal Server Error in 80ms (ActiveRecord: 0.0ms)
+
+
+Completed 500 Internal Server Error in 204ms (ActiveRecord: 99.2ms)
+
+
+  
+  
+NoMethodError (undefined method `authorization' for #<ActionDispatch::Http::Headers:0x00007ff3d7839b68>):
+NoMethodError (undefined method `authorization' for #<ActionDispatch::Http::Headers:0x00007ff3d7811d98>):
+  
+app/controllers/application_controller.rb:15:in `get_token'
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:19:in `current_user'
+app/controllers/api/v1/auth_controller.rb:10:in `create'
+  
+app/controllers/application_controller.rb:15:in `get_token'
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:19:in `current_user'
+app/controllers/api/v1/auth_controller.rb:16:in `show'
+Started POST "/api/v1/login" for ::1 at 2018-12-29 09:07:43 -0500
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 09:07:43 -0500
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "NotCool"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:6
+Completed 500 Internal Server Error in 81ms (ActiveRecord: 0.7ms)
+
+
+  
+NoMethodError (undefined method `split' for nil:NilClass):
+  
+app/controllers/application_controller.rb:15:in `get_token'
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:19:in `current_user'
+app/controllers/api/v1/auth_controller.rb:10:in `create'
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+
+  
+JWT::DecodeError (Not enough or too many segments):
+  
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:19:in `current_user'
+app/controllers/api/v1/auth_controller.rb:16:in `show'
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 09:08:57 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+JWT::DecodeError (Not enough or too many segments):
+  
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:19:in `current_user'
+app/controllers/api/v1/auth_controller.rb:16:in `show'
+Started POST "/api/v1/login" for ::1 at 2018-12-29 09:09:23 -0500
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}}}
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 09:09:23 -0500
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "NotCool"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:6
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+JWT::DecodeError (Not enough or too many segments):
+  
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:19:in `current_user'
+app/controllers/api/v1/auth_controller.rb:16:in `show'
+Completed 500 Internal Server Error in 171ms (ActiveRecord: 72.5ms)
+
+
+  
+NoMethodError (undefined method `split' for nil:NilClass):
+  
+app/controllers/application_controller.rb:15:in `get_token'
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:19:in `current_user'
+app/controllers/api/v1/auth_controller.rb:10:in `create'
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 09:10:18 -0500
+  [1m[35m (42.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/carsonrey/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+JWT::DecodeError (Not enough or too many segments):
+  
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:19:in `current_user'
+app/controllers/api/v1/auth_controller.rb:16:in `show'
+Started POST "/api/v1/login" for ::1 at 2018-12-29 09:10:25 -0500
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "NotCool"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:6
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 09:10:25 -0500
+Completed 500 Internal Server Error in 126ms (ActiveRecord: 21.6ms)
+
+
+  
+NoMethodError (undefined method `split' for nil:NilClass):
+  
+app/controllers/application_controller.rb:15:in `get_token'
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:19:in `current_user'
+app/controllers/api/v1/auth_controller.rb:10:in `create'
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+JWT::DecodeError (Not enough or too many segments):
+  
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:19:in `current_user'
+app/controllers/api/v1/auth_controller.rb:16:in `show'
+Started POST "/api/v1/login" for ::1 at 2018-12-29 09:11:34 -0500
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 09:11:34 -0500
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "NotCool"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:6
+Completed 500 Internal Server Error in 155ms (ActiveRecord: 23.0ms)
+
+
+  
+NoMethodError (undefined method `authorization' for #<ActionDispatch::Http::Headers:0x00007fc16b0b7be0>):
+  
+app/controllers/application_controller.rb:15:in `get_token'
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:19:in `current_user'
+app/controllers/api/v1/auth_controller.rb:10:in `create'
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `authorization' for #<ActionDispatch::Http::Headers:0x00007fc167c45e70>):
+  
+app/controllers/application_controller.rb:15:in `get_token'
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:19:in `current_user'
+app/controllers/api/v1/auth_controller.rb:16:in `show'
+Started POST "/api/v1/login" for ::1 at 2018-12-29 09:11:55 -0500
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 09:11:55 -0500
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "NotCool"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:6
+Completed 500 Internal Server Error in 178ms (ActiveRecord: 90.8ms)
+
+
+  
+NoMethodError (undefined method `split' for nil:NilClass):
+  
+app/controllers/application_controller.rb:15:in `get_token'
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:19:in `current_user'
+app/controllers/api/v1/auth_controller.rb:10:in `create'
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+JWT::DecodeError (Not enough or too many segments):
+  
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:19:in `current_user'
+app/controllers/api/v1/auth_controller.rb:16:in `show'
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 09:12:29 -0500
+Started POST "/api/v1/login" for ::1 at 2018-12-29 09:12:29 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+
+  
+JWT::DecodeError (Not enough or too many segments):
+  
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:19:in `current_user'
+app/controllers/api/v1/auth_controller.rb:16:in `show'
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "NotCool"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:6
+Completed 500 Internal Server Error in 83ms (ActiveRecord: 7.9ms)
+
+
+  
+JWT::DecodeError (Nil JSON web token):
+  
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:19:in `current_user'
+app/controllers/api/v1/auth_controller.rb:10:in `create'
+Started POST "/api/v1/login" for ::1 at 2018-12-29 09:13:55 -0500
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (12.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "NotCool"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:6
+Completed 500 Internal Server Error in 90ms (ActiveRecord: 12.1ms)
+
+
+  
+JWT::DecodeError (Nil JSON web token):
+  
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:19:in `current_user'
+app/controllers/api/v1/auth_controller.rb:10:in `create'
+Started POST "/api/v1/login" for ::1 at 2018-12-29 09:17:15 -0500
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (9.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "NotCool"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:6
+Completed 500 Internal Server Error in 82ms (ActiveRecord: 9.7ms)
+
+
+  
+JWT::DecodeError (Nil JSON web token):
+  
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:19:in `current_user'
+app/controllers/api/v1/auth_controller.rb:10:in `create'
+Started POST "/api/v1/login" for ::1 at 2018-12-29 09:18:13 -0500
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (8.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "NotCool"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:6
+Completed 500 Internal Server Error in 87ms (ActiveRecord: 8.6ms)
+
+
+  
+JWT::DecodeError (Nil JSON web token):
+  
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:19:in `current_user'
+app/controllers/api/v1/auth_controller.rb:10:in `create'
+Started POST "/api/v1/login" for ::1 at 2018-12-29 09:21:44 -0500
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (8.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "NotCool"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:6
+Completed 500 Internal Server Error in 86ms (ActiveRecord: 8.4ms)
+
+
+  
+JWT::DecodeError (Nil JSON web token):
+  
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:19:in `current_user'
+app/controllers/api/v1/auth_controller.rb:10:in `create'
+Started POST "/api/v1/login" for ::1 at 2018-12-29 09:22:12 -0500
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "NotCool"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:6
+Completed 500 Internal Server Error in 65ms (ActiveRecord: 0.3ms)
+
+
+  
+JWT::DecodeError (Nil JSON web token):
+  
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:19:in `current_user'
+app/controllers/api/v1/auth_controller.rb:10:in `create'
+Started POST "/api/v1/login" for ::1 at 2018-12-29 09:23:24 -0500
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "NotCool"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:6
+Completed 500 Internal Server Error in 277824ms (ActiveRecord: 16.9ms)
+
+
+  
+JWT::DecodeError (Nil JSON web token):
+  
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:19:in `current_user'
+app/controllers/api/v1/auth_controller.rb:10:in `create'
+Started POST "/api/v1/login" for ::1 at 2018-12-29 09:28:14 -0500
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "NotCool"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:6
+Completed 500 Internal Server Error in 82458ms (ActiveRecord: 10.7ms)
+
+
+  
+JWT::DecodeError (Nil JSON web token):
+  
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:19:in `current_user'
+app/controllers/api/v1/auth_controller.rb:11:in `create'
+Started POST "/api/v1/login" for ::1 at 2018-12-29 09:29:44 -0500
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (12.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "NotCool"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:6
+Completed 500 Internal Server Error in 56956ms (ActiveRecord: 12.0ms)
+
+
+  
+JWT::DecodeError (Nil JSON web token):
+  
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:19:in `current_user'
+app/controllers/api/v1/auth_controller.rb:11:in `create'
+Started POST "/api/v1/login" for ::1 at 2018-12-29 09:31:11 -0500
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "NotCool"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:6
+Completed 500 Internal Server Error in 71888ms (ActiveRecord: 41.5ms)
+
+
+  
+JWT::DecodeError (Nil JSON web token):
+  
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:19:in `current_user'
+app/controllers/api/v1/auth_controller.rb:11:in `create'
+Started POST "/api/v1/login" for ::1 at 2018-12-29 09:33:04 -0500
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "NotCool"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:6
+Completed 500 Internal Server Error in 130530ms (ActiveRecord: 19.9ms)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `params'
+app/controllers/api/v1/auth_controller.rb:26:in `login_user_params'
+app/controllers/api/v1/auth_controller.rb:8:in `create'
+Started POST "/api/v1/login" for ::1 at 2018-12-29 09:35:38 -0500
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "NotCool"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:6
+Completed 500 Internal Server Error in 223ms (ActiveRecord: 13.5ms)
+
+
+  
+JWT::DecodeError (Nil JSON web token):
+  
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:19:in `current_user'
+app/controllers/api/v1/auth_controller.rb:9:in `create'
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 09:36:27 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+Completed 500 Internal Server Error in 73ms (ActiveRecord: 0.0ms)
+
+
+  
+JWT::DecodeError (Not enough or too many segments):
+  
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:19:in `current_user'
+app/controllers/api/v1/auth_controller.rb:16:in `show'
+Started POST "/api/v1/login" for ::1 at 2018-12-29 09:36:55 -0500
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}}}
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 09:36:55 -0500
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "NotCool"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:7
+Completed 500 Internal Server Error in 93ms (ActiveRecord: 10.4ms)
+
+
+  
+JWT::DecodeError (Nil JSON web token):
+  
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:19:in `current_user'
+app/controllers/api/v1/auth_controller.rb:10:in `create'
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+JWT::DecodeError (Not enough or too many segments):
+  
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:19:in `current_user'
+app/controllers/api/v1/auth_controller.rb:16:in `show'
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 09:37:27 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+JWT::DecodeError (Not enough or too many segments):
+  
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:19:in `current_user'
+app/controllers/api/v1/auth_controller.rb:16:in `show'
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 09:37:42 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+JWT::DecodeError (Not enough or too many segments):
+  
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:19:in `current_user'
+app/controllers/api/v1/auth_controller.rb:16:in `show'
+Started POST "/api/v1/login" for ::1 at 2018-12-29 09:38:01 -0500
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}}}
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 09:42:14 -0500
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "NotCool"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:7
+Completed 500 Internal Server Error in 253073ms (ActiveRecord: 13.1ms)
+
+
+  
+JWT::DecodeError (Nil JSON web token):
+  
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:19:in `current_user'
+app/controllers/api/v1/auth_controller.rb:10:in `create'
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+JWT::DecodeError (Not enough or too many segments):
+  
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:19:in `current_user'
+app/controllers/api/v1/auth_controller.rb:16:in `show'
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 09:46:10 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+
+  
+JWT::DecodeError (Not enough or too many segments):
+  
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:19:in `current_user'
+app/controllers/api/v1/auth_controller.rb:16:in `show'
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 09:46:15 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+JWT::DecodeError (Not enough or too many segments):
+  
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:19:in `current_user'
+app/controllers/api/v1/auth_controller.rb:16:in `show'
+Started POST "/api/v1/login" for ::1 at 2018-12-29 09:46:15 -0500
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}}}
+Started POST "/api/v1/login" for ::1 at 2018-12-29 09:49:00 -0500
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}}}
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 09:49:01 -0500
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "NotCool"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:7
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "NotCool"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:7
+Completed 500 Internal Server Error in 1627ms (ActiveRecord: 10.0ms)
+
+
+  
+Completed 500 Internal Server Error in 166725ms (ActiveRecord: 1633.3ms)
+
+
+JWT::DecodeError (Nil JSON web token):
+  
+  
+JWT::DecodeError (Nil JSON web token):
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:19:in `current_user'
+app/controllers/api/v1/auth_controller.rb:10:in `create'
+  
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:19:in `current_user'
+app/controllers/api/v1/auth_controller.rb:10:in `create'
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+Completed 500 Internal Server Error in 5649ms (ActiveRecord: 0.0ms)
+
+
+  
+JWT::DecodeError (Not enough or too many segments):
+  
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:19:in `current_user'
+app/controllers/api/v1/auth_controller.rb:17:in `show'
+Started POST "/api/v1/login" for ::1 at 2018-12-29 09:49:18 -0500
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}}}
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 09:49:18 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (33771.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "NotCool"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:7
+Completed 500 Internal Server Error in 35079ms (ActiveRecord: 0.0ms)
+
+
+  
+JWT::DecodeError (Not enough or too many segments):
+  
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:19:in `current_user'
+app/controllers/api/v1/auth_controller.rb:17:in `show'
+Completed 500 Internal Server Error in 35197ms (ActiveRecord: 35083.1ms)
+
+
+  
+JWT::DecodeError (Nil JSON web token):
+  
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:19:in `current_user'
+app/controllers/api/v1/auth_controller.rb:10:in `create'
+Started POST "/api/v1/login" for ::1 at 2018-12-29 09:52:42 -0500
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 09:52:42 -0500
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "NotCool"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.6ms)
+Completed 500 Internal Server Error in 102ms (Views: 7.2ms | ActiveRecord: 11.0ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/api/v1/auth_controller.rb:11:in `create'
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+Completed 500 Internal Server Error in 10737ms (ActiveRecord: 0.0ms)
+
+
+  
+JWT::DecodeError (Not enough or too many segments):
+  
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:19:in `this_user'
+app/controllers/api/v1/auth_controller.rb:17:in `show'
+Started GET "/api/v1/users" for ::1 at 2018-12-29 09:53:15 -0500
+Processing by Api::V1::UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers]   [1m[36mActivity Load (1.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "user_activities" ON "activities"."id" = "user_activities"."activity_id" WHERE "user_activities"."user_id" = $1[0m  [["user_id", 7]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers]   [1m[36mActivity Load (0.5ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "user_activities" ON "activities"."id" = "user_activities"."activity_id" WHERE "user_activities"."user_id" = $1[0m  [["user_id", 8]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers]   [1m[36mActivity Load (0.6ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "user_activities" ON "activities"."id" = "user_activities"."activity_id" WHERE "user_activities"."user_id" = $1[0m  [["user_id", 9]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (40.25ms)
+Completed 200 OK in 79ms (Views: 59.0ms | ActiveRecord: 19.2ms)
+
+
+Started POST "/api/v1/login" for ::1 at 2018-12-29 09:53:49 -0500
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (6.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "NotCool"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:7
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 09:53:49 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+Completed 500 Internal Server Error in 16297ms (ActiveRecord: 0.0ms)
+
+
+  
+JWT::DecodeError (Not enough or too many segments):
+  
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:19:in `this_user'
+app/controllers/api/v1/auth_controller.rb:17:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.6ms)
+Completed 500 Internal Server Error in 16428ms (Views: 16349.5ms | ActiveRecord: 6.5ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/api/v1/auth_controller.rb:11:in `create'
+Started POST "/api/v1/login" for ::1 at 2018-12-29 09:55:15 -0500
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 09:55:15 -0500
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/carsonrey/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}}}
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms)
+
+
+  
+JWT::DecodeError (Not enough or too many segments):
+  
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:19:in `this_user'
+app/controllers/api/v1/auth_controller.rb:17:in `show'
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "NotCool"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.45ms)
+Completed 500 Internal Server Error in 158ms (Views: 5.9ms | ActiveRecord: 63.1ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/api/v1/auth_controller.rb:11:in `create'
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 09:58:42 -0500
+Started POST "/api/v1/login" for ::1 at 2018-12-29 09:58:43 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+Completed 500 Internal Server Error in 182758ms (ActiveRecord: 0.0ms)
+
+
+  
+JWT::DecodeError (Not enough or too many segments):
+  
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:19:in `this_user'
+app/controllers/api/v1/auth_controller.rb:17:in `show'
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "NotCool"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.33ms)
+Completed 500 Internal Server Error in 86ms (Views: 4.4ms | ActiveRecord: 6.5ms)
+
+
+  
+AbstractController::DoubleRenderError (Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".):
+  
+app/controllers/api/v1/auth_controller.rb:11:in `create'
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 10:02:32 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+JWT::DecodeError (Not enough or too many segments):
+  
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:19:in `current_user'
+app/controllers/api/v1/auth_controller.rb:17:in `show'
+Started POST "/api/v1/login" for ::1 at 2018-12-29 10:02:46 -0500
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}}}
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 10:02:46 -0500
+  [1m[36mUser Load (9.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "NotCool"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:7
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+JWT::DecodeError (Not enough or too many segments):
+  
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:19:in `current_user'
+app/controllers/api/v1/auth_controller.rb:17:in `show'
+Completed 500 Internal Server Error in 132ms (ActiveRecord: 57.7ms)
+
+
+  
+JWT::DecodeError (Nil JSON web token):
+  
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:19:in `current_user'
+app/controllers/api/v1/auth_controller.rb:10:in `create'
+Started POST "/api/v1/login" for ::1 at 2018-12-29 10:35:37 -0500
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 10:35:37 -0500
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "NotCool"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:7
+Completed 500 Internal Server Error in 109ms (ActiveRecord: 20.5ms)
+
+
+  
+JWT::DecodeError (Nil JSON web token):
+  
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:19:in `current_user'
+app/controllers/api/v1/auth_controller.rb:10:in `create'
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+JWT::DecodeError (Not enough or too many segments):
+  
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:19:in `current_user'
+app/controllers/api/v1/auth_controller.rb:17:in `show'
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 10:37:46 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+JWT::DecodeError (Not enough or too many segments):
+  
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:19:in `current_user'
+app/controllers/api/v1/auth_controller.rb:17:in `show'
+Started POST "/api/v1/login" for ::1 at 2018-12-29 10:37:58 -0500
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "NotCool"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:7
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 10:37:58 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+JWT::DecodeError (Not enough or too many segments):
+  
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:19:in `current_user'
+app/controllers/api/v1/auth_controller.rb:17:in `show'
+Completed 500 Internal Server Error in 173ms (ActiveRecord: 93.9ms)
+
+
+  
+JWT::DecodeError (Nil JSON web token):
+  
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:19:in `current_user'
+app/controllers/api/v1/auth_controller.rb:10:in `create'
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 10:39:20 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+JWT::DecodeError (Not enough or too many segments):
+  
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:19:in `current_user'
+app/controllers/api/v1/auth_controller.rb:17:in `show'
+Started POST "/api/v1/login" for ::1 at 2018-12-29 10:39:24 -0500
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (6.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "NotCool"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:7
+Completed 500 Internal Server Error in 76ms (ActiveRecord: 6.9ms)
+
+
+  
+JWT::DecodeError (Nil JSON web token):
+  
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:19:in `current_user'
+app/controllers/api/v1/auth_controller.rb:10:in `create'
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 10:44:02 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+JWT::DecodeError (Not enough or too many segments):
+  
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:19:in `current_user'
+app/controllers/api/v1/auth_controller.rb:17:in `show'
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 10:44:10 -0500
+Started POST "/api/v1/login" for ::1 at 2018-12-29 10:44:10 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+JWT::DecodeError (Not enough or too many segments):
+  
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:19:in `current_user'
+app/controllers/api/v1/auth_controller.rb:17:in `show'
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "NotCool"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:7
+Completed 500 Internal Server Error in 200ms (ActiveRecord: 16.2ms)
+
+
+  
+NameError (undefined local variable or method `user' for #<Api::V1::AuthController:0x00007febb29d43b0>
+Did you mean?  @user):
+  
+app/controllers/api/v1/auth_controller.rb:10:in `create'
+Started POST "/api/v1/login" for ::1 at 2018-12-29 10:44:30 -0500
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 10:44:30 -0500
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "NotCool"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:7
+Completed 500 Internal Server Error in 95ms (ActiveRecord: 7.7ms)
+
+
+  
+JWT::DecodeError (Nil JSON web token):
+  
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:19:in `current_user'
+app/controllers/api/v1/auth_controller.rb:10:in `create'
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+JWT::DecodeError (Not enough or too many segments):
+  
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:19:in `current_user'
+app/controllers/api/v1/auth_controller.rb:17:in `show'
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 10:46:28 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+
+  
+JWT::DecodeError (Not enough or too many segments):
+  
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:19:in `current_user'
+app/controllers/api/v1/auth_controller.rb:18:in `show'
+Started POST "/api/v1/login" for ::1 at 2018-12-29 10:46:37 -0500
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "NotCool"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:7
+Completed 500 Internal Server Error in 103ms (ActiveRecord: 22.2ms)
+
+
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 10:46:37 -0500
+  
+JWT::DecodeError (Nil JSON web token):
+  
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:19:in `current_user'
+app/controllers/api/v1/auth_controller.rb:10:in `create'
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+JWT::DecodeError (Not enough or too many segments):
+  
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:19:in `current_user'
+app/controllers/api/v1/auth_controller.rb:18:in `show'
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 10:48:37 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/application_controller.rb:23:in `current_user'
+app/controllers/api/v1/auth_controller.rb:18:in `show'
+Started POST "/api/v1/login" for ::1 at 2018-12-29 10:48:46 -0500
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}}}
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 10:48:46 -0500
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "NotCool"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:7
+Completed 500 Internal Server Error in 85ms (ActiveRecord: 0.5ms)
+
+
+Processing by Api::V1::AuthController#show as */*
+  
+  Parameters: {"auth"=>{}}
+NoMethodError (undefined method `[]' for nil:NilClass):
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+  
+app/controllers/application_controller.rb:23:in `current_user'
+app/controllers/api/v1/auth_controller.rb:10:in `create'
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/application_controller.rb:23:in `current_user'
+app/controllers/api/v1/auth_controller.rb:18:in `show'
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 10:50:46 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/application_controller.rb:22:in `current_user'
+app/controllers/api/v1/auth_controller.rb:18:in `show'
+Started POST "/api/v1/login" for ::1 at 2018-12-29 10:50:52 -0500
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (4.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "NotCool"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:7
+Completed 500 Internal Server Error in 83ms (ActiveRecord: 4.9ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/application_controller.rb:22:in `current_user'
+app/controllers/api/v1/auth_controller.rb:10:in `create'
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 10:50:52 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/application_controller.rb:22:in `current_user'
+app/controllers/api/v1/auth_controller.rb:18:in `show'
+Started POST "/api/v1/login" for ::1 at 2018-12-29 10:59:58 -0500
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 10:59:58 -0500
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "NotCool"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:7
+Completed 500 Internal Server Error in 77507ms (ActiveRecord: 14.7ms)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `headers'
+app/controllers/application_controller.rb:18:in `get_token'
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:22:in `current_user'
+app/controllers/api/v1/auth_controller.rb:10:in `create'
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 11:01:20 -0500
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 11:01:20 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+Completed 500 Internal Server Error in 108751ms (ActiveRecord: 0.0ms)
+
+
+  
+Completed 500 Internal Server Error in 108853ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/api/v1/login" for ::1 at 2018-12-29 11:03:09 -0500
+NoMethodError (undefined method `[]' for nil:NilClass):
+Completed 500 Internal Server Error in 109545ms (ActiveRecord: 0.0ms)
+
+
+  
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 11:03:10 -0500
+  
+app/controllers/application_controller.rb:22:in `current_user'
+app/controllers/api/v1/auth_controller.rb:18:in `show'
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+  
+SystemExit (exit):
+app/controllers/application_controller.rb:22:in `current_user'
+app/controllers/api/v1/auth_controller.rb:18:in `show'
+  
+(byebug):1:in `exit'
+(byebug):1:in `headers'
+app/controllers/application_controller.rb:18:in `get_token'
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:22:in `current_user'
+app/controllers/api/v1/auth_controller.rb:18:in `show'
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 11:03:10 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+Completed 500 Internal Server Error in 470ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/application_controller.rb:22:in `current_user'
+app/controllers/api/v1/auth_controller.rb:18:in `show'
+Processing by Api::V1::AuthController#show as */*
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"auth"=>{}}
+  Parameters: {"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}}}
+Completed 500 Internal Server Error in 537ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/application_controller.rb:22:in `current_user'
+app/controllers/api/v1/auth_controller.rb:18:in `show'
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "NotCool"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:7
+Completed 500 Internal Server Error in 417ms (ActiveRecord: 128.2ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/application_controller.rb:22:in `current_user'
+app/controllers/api/v1/auth_controller.rb:10:in `create'
+Started POST "/api/v1/login" for ::1 at 2018-12-29 11:03:24 -0500
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "NotCool"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:7
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 11:04:35 -0500
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 11:04:35 -0500
+Completed 500 Internal Server Error in 70378ms (ActiveRecord: 0.5ms)
+
+
+  
+SystemExit (exit):
+  
+Processing by Api::V1::AuthController#show as */*
+Processing by Api::V1::AuthController#show as */*
+(byebug):1:in `exit'
+(byebug):1:in `headers'
+app/controllers/application_controller.rb:18:in `get_token'
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:22:in `current_user'
+app/controllers/api/v1/auth_controller.rb:10:in `create'
+  Parameters: {"auth"=>{}}
+  Parameters: {"auth"=>{}}
+Completed 500 Internal Server Error in 16080ms (ActiveRecord: 0.0ms)
+
+
+  
+SystemExit (exit):
+Completed 500 Internal Server Error in 2622ms (ActiveRecord: 0.0ms)
+
+
+  
+  
+(byebug):1:in `exit'
+(byebug):1:in `headers'
+app/controllers/application_controller.rb:18:in `get_token'
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:22:in `current_user'
+app/controllers/api/v1/auth_controller.rb:18:in `show'
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `headers'
+app/controllers/application_controller.rb:18:in `get_token'
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:22:in `current_user'
+app/controllers/api/v1/auth_controller.rb:18:in `show'
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 11:05:21 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+Completed 500 Internal Server Error in 17951ms (ActiveRecord: 0.0ms)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `headers'
+app/controllers/application_controller.rb:18:in `get_token'
+app/controllers/application_controller.rb:10:in `decode_token'
+app/controllers/application_controller.rb:22:in `current_user'
+app/controllers/api/v1/auth_controller.rb:18:in `show'
+Started POST "/api/v1/login" for ::1 at 2018-12-29 11:05:54 -0500
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 11:05:55 -0500
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "NotCool"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:7
+Completed 500 Internal Server Error in 379ms (ActiveRecord: 3.3ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/application_controller.rb:21:in `current_user'
+app/controllers/api/v1/auth_controller.rb:10:in `create'
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+Completed 500 Internal Server Error in 125ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/application_controller.rb:21:in `current_user'
+app/controllers/api/v1/auth_controller.rb:18:in `show'
+Started POST "/api/v1/login" for ::1 at 2018-12-29 11:07:11 -0500
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 11:07:12 -0500
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "NotCool"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:7
+Completed 500 Internal Server Error in 292714ms (ActiveRecord: 16.4ms)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `params'
+app/controllers/api/v1/auth_controller.rb:29:in `login_user_params'
+app/controllers/api/v1/auth_controller.rb:9:in `create'
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 11:12:09 -0500
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 11:12:09 -0500
+Started GET "/api/v1/users" for ::1 at 2018-12-29 11:12:10 -0500
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 11:12:10 -0500
+  
+Processing by Api::V1::UsersController#index as HTML
+  
+LoadError (Unable to autoload constant Api::V1::AuthController, expected /Users/carsonrey/BoredAF-NY/backend-bored-af-ny/app/controllers/api/v1/auth_controller.rb to define it):
+  
+  
+LoadError (Unable to autoload constant Api::V1::AuthController, expected /Users/carsonrey/BoredAF-NY/backend-bored-af-ny/app/controllers/api/v1/auth_controller.rb to define it):
+LoadError (Unable to autoload constant Api::V1::AuthController, expected /Users/carsonrey/BoredAF-NY/backend-bored-af-ny/app/controllers/api/v1/auth_controller.rb to define it):
+  
+  
+LoadError (Unable to autoload constant Api::V1::AuthController, expected /Users/carsonrey/BoredAF-NY/backend-bored-af-ny/app/controllers/api/v1/auth_controller.rb to define it):
+activesupport (5.2.2) lib/active_support/dependencies.rb:511:in `load_missing_constant'
+bootsnap (1.3.2) lib/bootsnap/load_path_cache/core_ext/active_support.rb:58:in `block in load_missing_constant'
+bootsnap (1.3.2) lib/bootsnap/load_path_cache/core_ext/active_support.rb:16:in `allow_bootsnap_retry'
+bootsnap (1.3.2) lib/bootsnap/load_path_cache/core_ext/active_support.rb:57:in `load_missing_constant'
+activesupport (5.2.2) lib/active_support/dependencies.rb:195:in `const_missing'
+activesupport (5.2.2) lib/active_support/inflector/methods.rb:285:in `const_get'
+activesupport (5.2.2) lib/active_support/inflector/methods.rb:285:in `block in constantize'
+activesupport (5.2.2) lib/active_support/inflector/methods.rb:281:in `each'
+activesupport (5.2.2) lib/active_support/inflector/methods.rb:281:in `inject'
+activesupport (5.2.2) lib/active_support/inflector/methods.rb:281:in `constantize'
+activesupport (5.2.2) lib/active_support/dependencies.rb:582:in `get'
+activesupport (5.2.2) lib/active_support/dependencies.rb:613:in `constantize'
+actionpack (5.2.2) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (5.2.2) lib/action_dispatch/http/parameters.rb:101:in `binary_params_for?'
+actionpack (5.2.2) lib/action_dispatch/http/parameters.rb:92:in `set_binary_encoding'
+actionpack (5.2.2) lib/action_dispatch/http/parameters.rb:69:in `path_parameters='
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+activerecord (5.2.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+  
+activesupport (5.2.2) lib/active_support/dependencies.rb:511:in `load_missing_constant'
+bootsnap (1.3.2) lib/bootsnap/load_path_cache/core_ext/active_support.rb:58:in `block in load_missing_constant'
+bootsnap (1.3.2) lib/bootsnap/load_path_cache/core_ext/active_support.rb:16:in `allow_bootsnap_retry'
+bootsnap (1.3.2) lib/bootsnap/load_path_cache/core_ext/active_support.rb:57:in `load_missing_constant'
+activesupport (5.2.2) lib/active_support/dependencies.rb:195:in `const_missing'
+activesupport (5.2.2) lib/active_support/inflector/methods.rb:285:in `const_get'
+activesupport (5.2.2) lib/active_support/inflector/methods.rb:285:in `block in constantize'
+activesupport (5.2.2) lib/active_support/inflector/methods.rb:281:in `each'
+activesupport (5.2.2) lib/active_support/inflector/methods.rb:281:in `inject'
+activesupport (5.2.2) lib/active_support/inflector/methods.rb:281:in `constantize'
+activesupport (5.2.2) lib/active_support/dependencies.rb:582:in `get'
+activesupport (5.2.2) lib/active_support/dependencies.rb:613:in `constantize'
+actionpack (5.2.2) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (5.2.2) lib/action_dispatch/http/parameters.rb:101:in `binary_params_for?'
+actionpack (5.2.2) lib/action_dispatch/http/parameters.rb:92:in `set_binary_encoding'
+actionpack (5.2.2) lib/action_dispatch/http/parameters.rb:69:in `path_parameters='
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+activerecord (5.2.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+  
+activesupport (5.2.2) lib/active_support/dependencies.rb:511:in `load_missing_constant'
+bootsnap (1.3.2) lib/bootsnap/load_path_cache/core_ext/active_support.rb:58:in `block in load_missing_constant'
+bootsnap (1.3.2) lib/bootsnap/load_path_cache/core_ext/active_support.rb:16:in `allow_bootsnap_retry'
+bootsnap (1.3.2) lib/bootsnap/load_path_cache/core_ext/active_support.rb:57:in `load_missing_constant'
+activesupport (5.2.2) lib/active_support/dependencies.rb:195:in `const_missing'
+activesupport (5.2.2) lib/active_support/inflector/methods.rb:285:in `const_get'
+activesupport (5.2.2) lib/active_support/inflector/methods.rb:285:in `block in constantize'
+activesupport (5.2.2) lib/active_support/inflector/methods.rb:281:in `each'
+activesupport (5.2.2) lib/active_support/inflector/methods.rb:281:in `inject'
+activesupport (5.2.2) lib/active_support/inflector/methods.rb:281:in `constantize'
+activesupport (5.2.2) lib/active_support/dependencies.rb:582:in `get'
+activesupport (5.2.2) lib/active_support/dependencies.rb:613:in `constantize'
+actionpack (5.2.2) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (5.2.2) lib/action_dispatch/http/parameters.rb:101:in `binary_params_for?'
+actionpack (5.2.2) lib/action_dispatch/http/parameters.rb:92:in `set_binary_encoding'
+actionpack (5.2.2) lib/action_dispatch/http/parameters.rb:69:in `path_parameters='
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+activerecord (5.2.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+activesupport (5.2.2) lib/active_support/dependencies.rb:511:in `load_missing_constant'
+bootsnap (1.3.2) lib/bootsnap/load_path_cache/core_ext/active_support.rb:58:in `block in load_missing_constant'
+bootsnap (1.3.2) lib/bootsnap/load_path_cache/core_ext/active_support.rb:16:in `allow_bootsnap_retry'
+bootsnap (1.3.2) lib/bootsnap/load_path_cache/core_ext/active_support.rb:57:in `load_missing_constant'
+activesupport (5.2.2) lib/active_support/dependencies.rb:195:in `const_missing'
+activesupport (5.2.2) lib/active_support/inflector/methods.rb:285:in `const_get'
+activesupport (5.2.2) lib/active_support/inflector/methods.rb:285:in `block in constantize'
+activesupport (5.2.2) lib/active_support/inflector/methods.rb:281:in `each'
+activesupport (5.2.2) lib/active_support/inflector/methods.rb:281:in `inject'
+activesupport (5.2.2) lib/active_support/inflector/methods.rb:281:in `constantize'
+activesupport (5.2.2) lib/active_support/dependencies.rb:582:in `get'
+activesupport (5.2.2) lib/active_support/dependencies.rb:613:in `constantize'
+actionpack (5.2.2) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (5.2.2) lib/action_dispatch/http/parameters.rb:101:in `binary_params_for?'
+actionpack (5.2.2) lib/action_dispatch/http/parameters.rb:92:in `set_binary_encoding'
+actionpack (5.2.2) lib/action_dispatch/http/parameters.rb:69:in `path_parameters='
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+activerecord (5.2.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Completed 500 Internal Server Error in 2272ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/application_controller.rb:21:in `current_user'
+app/controllers/api/v1/users_controller.rb:6:in `index'
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 11:13:07 -0500
+Started POST "/api/v1/login" for ::1 at 2018-12-29 11:13:07 -0500
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"ooo", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"ooo", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "ooo"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:7
+Completed 500 Internal Server Error in 717658ms (ActiveRecord: 8.6ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/application_controller.rb:21:in `current_user'
+app/controllers/api/v1/auth_controller.rb:13:in `create'
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/application_controller.rb:21:in `current_user'
+app/controllers/api/v1/auth_controller.rb:19:in `show'
+Started POST "/api/v1/login" for ::1 at 2018-12-29 11:25:16 -0500
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 11:25:16 -0500
+Processing by Api::V1::AuthController#create as */*
+  Parameters: {"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "NotCool"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:7
+Completed 500 Internal Server Error in 729657ms (ActiveRecord: 16.5ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/application_controller.rb:21:in `current_user'
+app/controllers/api/v1/auth_controller.rb:11:in `create'
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 11:37:26 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/application_controller.rb:21:in `current_user'
+app/controllers/api/v1/auth_controller.rb:19:in `show'
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/application_controller.rb:21:in `current_user'
+app/controllers/api/v1/auth_controller.rb:19:in `show'
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 11:38:22 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/application_controller.rb:21:in `current_user'
+app/controllers/api/v1/auth_controller.rb:19:in `show'
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 11:38:37 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/application_controller.rb:21:in `current_user'
+app/controllers/api/v1/auth_controller.rb:19:in `show'
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 11:40:10 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/application_controller.rb:21:in `current_user'
+app/controllers/api/v1/auth_controller.rb:19:in `show'
+Started POST "/api/v1/login" for ::1 at 2018-12-29 11:40:10 -0500
+Processing by Api::V1::AuthController#create as JSON
+  Parameters: {"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "NotCool"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:7
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 11:48:55 -0500
+Completed 500 Internal Server Error in 613916ms (ActiveRecord: 20.4ms)
+
+
+Started POST "/api/v1/login" for ::1 at 2018-12-29 11:50:24 -0500
+  
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 11:50:24 -0500
+Started POST "/api/v1/login" for ::1 at 2018-12-29 11:50:24 -0500
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/application_controller.rb:21:in `current_user'
+app/controllers/api/v1/auth_controller.rb:11:in `create'
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 11:50:24 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/application_controller.rb:21:in `current_user'
+app/controllers/api/v1/auth_controller.rb:19:in `show'
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 11:50:24 -0500
+Processing by Api::V1::AuthController#show as */*
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+  Parameters: {"auth"=>{}}
+Processing by Api::V1::AuthController#create as JSON
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+Processing by Api::V1::AuthController#create as JSON
+  Parameters: {"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}}}
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  Parameters: {"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}}}
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+Processing by Api::V1::AuthController#show as */*
+app/controllers/application_controller.rb:21:in `current_user'
+app/controllers/api/v1/auth_controller.rb:19:in `show'
+  Parameters: {"auth"=>{}}
+  
+  [1m[36mUser Load (27.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "NotCool"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  [1m[36mUser Load (27.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "NotCool"], ["LIMIT", 1]]
+app/controllers/application_controller.rb:21:in `current_user'
+app/controllers/api/v1/auth_controller.rb:19:in `show'
+  ↳ app/controllers/api/v1/auth_controller.rb:7
+  
+  ↳ app/controllers/api/v1/auth_controller.rb:7
+NoMethodError (undefined method `[]' for nil:NilClass):
+Started POST "/api/v1/login" for ::1 at 2018-12-29 11:50:24 -0500
+  
+app/controllers/application_controller.rb:21:in `current_user'
+app/controllers/api/v1/auth_controller.rb:19:in `show'
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 11:50:24 -0500
+Completed 500 Internal Server Error in 15917ms (ActiveRecord: 87.2ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+Completed 500 Internal Server Error in 16936ms (ActiveRecord: 15880.1ms)
+
+
+  
+  
+app/controllers/application_controller.rb:21:in `current_user'
+app/controllers/api/v1/auth_controller.rb:11:in `create'
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/application_controller.rb:21:in `current_user'
+app/controllers/api/v1/auth_controller.rb:11:in `create'
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 11:50:41 -0500
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 11:50:41 -0500
+Started POST "/api/v1/login" for ::1 at 2018-12-29 11:50:41 -0500
+  
+LoadError (Unable to autoload constant Api::V1::AuthController, expected /Users/carsonrey/BoredAF-NY/backend-bored-af-ny/app/controllers/api/v1/auth_controller.rb to define it):
+  
+activesupport (5.2.2) lib/active_support/dependencies.rb:511:in `load_missing_constant'
+bootsnap (1.3.2) lib/bootsnap/load_path_cache/core_ext/active_support.rb:58:in `block in load_missing_constant'
+bootsnap (1.3.2) lib/bootsnap/load_path_cache/core_ext/active_support.rb:16:in `allow_bootsnap_retry'
+bootsnap (1.3.2) lib/bootsnap/load_path_cache/core_ext/active_support.rb:57:in `load_missing_constant'
+activesupport (5.2.2) lib/active_support/dependencies.rb:195:in `const_missing'
+activesupport (5.2.2) lib/active_support/inflector/methods.rb:285:in `const_get'
+activesupport (5.2.2) lib/active_support/inflector/methods.rb:285:in `block in constantize'
+activesupport (5.2.2) lib/active_support/inflector/methods.rb:281:in `each'
+activesupport (5.2.2) lib/active_support/inflector/methods.rb:281:in `inject'
+activesupport (5.2.2) lib/active_support/inflector/methods.rb:281:in `constantize'
+activesupport (5.2.2) lib/active_support/dependencies.rb:582:in `get'
+activesupport (5.2.2) lib/active_support/dependencies.rb:613:in `constantize'
+actionpack (5.2.2) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (5.2.2) lib/action_dispatch/http/parameters.rb:101:in `binary_params_for?'
+actionpack (5.2.2) lib/action_dispatch/http/parameters.rb:92:in `set_binary_encoding'
+actionpack (5.2.2) lib/action_dispatch/http/parameters.rb:69:in `path_parameters='
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+activerecord (5.2.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Processing by Api::V1::AuthController#create as JSON
+  Parameters: {"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "NotCool"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:7
+Completed 500 Internal Server Error in 104ms (ActiveRecord: 26.2ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/application_controller.rb:21:in `current_user'
+app/controllers/api/v1/auth_controller.rb:11:in `create'
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 11:50:41 -0500
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 11:50:41 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+Processing by Api::V1::AuthController#create as JSON
+  Parameters: {"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}}}
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+Completed 500 Internal Server Error in 63ms (ActiveRecord: 0.0ms)
+
+
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms)
+
+
+  
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.0ms)
+
+
+NoMethodError (undefined method `[]' for nil:NilClass):
+Completed 500 Internal Server Error in 75ms (ActiveRecord: 0.0ms)
+
+
+  
+  
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+NoMethodError (undefined method `[]' for nil:NilClass):
+app/controllers/application_controller.rb:21:in `current_user'
+app/controllers/api/v1/auth_controller.rb:19:in `show'
+  
+app/controllers/application_controller.rb:21:in `current_user'
+app/controllers/api/v1/auth_controller.rb:19:in `show'
+  
+  
+app/controllers/application_controller.rb:21:in `current_user'
+app/controllers/api/v1/auth_controller.rb:19:in `show'
+Started POST "/api/v1/login" for ::1 at 2018-12-29 11:50:41 -0500
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 11:50:41 -0500
+  [1m[36mUser Load (22.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "NotCool"], ["LIMIT", 1]]
+NoMethodError (undefined method `[]' for nil:NilClass):
+  ↳ app/controllers/api/v1/auth_controller.rb:7
+  
+Processing by Api::V1::AuthController#create as JSON
+  Parameters: {"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}}}
+app/controllers/application_controller.rb:21:in `current_user'
+app/controllers/api/v1/auth_controller.rb:19:in `show'
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 11:50:41 -0500
+  [1m[36mUser Load (23.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "NotCool"], ["LIMIT", 1]]
+Processing by Api::V1::AuthController#show as */*
+  ↳ app/controllers/api/v1/auth_controller.rb:7
+  Parameters: {"auth"=>{}}
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+Completed 500 Internal Server Error in 244ms (ActiveRecord: 66.5ms)
+
+
+  
+  
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/application_controller.rb:21:in `current_user'
+app/controllers/api/v1/auth_controller.rb:19:in `show'
+  
+app/controllers/application_controller.rb:21:in `current_user'
+app/controllers/api/v1/auth_controller.rb:19:in `show'
+app/controllers/application_controller.rb:21:in `current_user'
+app/controllers/api/v1/auth_controller.rb:11:in `create'
+Completed 500 Internal Server Error in 186ms (ActiveRecord: 118.5ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/application_controller.rb:21:in `current_user'
+app/controllers/api/v1/auth_controller.rb:11:in `create'
+Started POST "/api/v1/login" for ::1 at 2018-12-29 11:54:15 -0500
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 11:54:15 -0500
+Processing by Api::V1::AuthController#create as JSON
+  Parameters: {"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "NotCool"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.44ms)
+Completed 200 OK in 101ms (Views: 7.3ms | ActiveRecord: 11.6ms)
+
+
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 422 Unprocessable Entity in 5ms (Views: 4.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/v1/login" for ::1 at 2018-12-29 11:55:21 -0500
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 11:55:21 -0500
+Processing by Api::V1::AuthController#create as JSON
+  Parameters: {"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "NotCool"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.37ms)
+Completed 200 OK in 92ms (Views: 5.2ms | ActiveRecord: 8.7ms)
+
+
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.08ms)
+Completed 422 Unprocessable Entity in 6ms (Views: 5.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/users" for ::1 at 2018-12-29 11:55:43 -0500
+Processing by Api::V1::UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers]   [1m[36mActivity Load (1.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "user_activities" ON "activities"."id" = "user_activities"."activity_id" WHERE "user_activities"."user_id" = $1[0m  [["user_id", 7]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers]   [1m[36mActivity Load (0.7ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "user_activities" ON "activities"."id" = "user_activities"."activity_id" WHERE "user_activities"."user_id" = $1[0m  [["user_id", 8]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers]   [1m[36mActivity Load (0.7ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "user_activities" ON "activities"."id" = "user_activities"."activity_id" WHERE "user_activities"."user_id" = $1[0m  [["user_id", 9]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (48.19ms)
+Completed 200 OK in 102ms (Views: 77.2ms | ActiveRecord: 19.2ms)
+
+
+Started POST "/api/v1/login" for ::1 at 2018-12-29 12:02:07 -0500
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 12:02:07 -0500
+Processing by Api::V1::AuthController#create as JSON
+  Parameters: {"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "NotCool"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:7
+Completed 500 Internal Server Error in 94ms (ActiveRecord: 14.8ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/application_controller.rb:49:in `current_user'
+app/controllers/api/v1/auth_controller.rb:11:in `create'
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:49
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:49
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:49
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.39ms)
+Completed 200 OK in 37ms (Views: 11.9ms | ActiveRecord: 8.7ms)
+
+
+Started POST "/api/v1/login" for ::1 at 2018-12-29 12:02:21 -0500
+Processing by Api::V1::AuthController#create as JSON
+  Parameters: {"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (3.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "NotCool"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:7
+Completed 500 Internal Server Error in 75ms (ActiveRecord: 3.7ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/application_controller.rb:49:in `current_user'
+app/controllers/api/v1/auth_controller.rb:11:in `create'
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 12:02:21 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/application_controller.rb:49:in `current_user'
+app/controllers/api/v1/auth_controller.rb:19:in `show'
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 12:03:00 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.11ms)
+Completed 422 Unprocessable Entity in 8ms (Views: 7.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/v1/login" for ::1 at 2018-12-29 12:03:11 -0500
+Processing by Api::V1::AuthController#create as JSON
+  Parameters: {"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}}}
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 12:03:11 -0500
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "NotCool"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.58ms)
+Completed 200 OK in 101ms (Views: 1.7ms | ActiveRecord: 14.7ms)
+
+
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.16ms)
+Completed 422 Unprocessable Entity in 1ms (Views: 0.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 12:04:22 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:50
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:50
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:50
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.42ms)
+Completed 200 OK in 18ms (Views: 1.7ms | ActiveRecord: 11.2ms)
+
+
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 12:04:31 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:50
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:50
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:50
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.4ms)
+Completed 200 OK in 5ms (Views: 2.1ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/api/v1/login" for ::1 at 2018-12-29 12:04:34 -0500
+Processing by Api::V1::AuthController#create as JSON
+  Parameters: {"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "NotCool"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.6ms)
+Completed 200 OK in 80ms (Views: 1.4ms | ActiveRecord: 0.5ms)
+
+

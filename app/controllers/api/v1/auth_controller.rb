@@ -3,15 +3,19 @@ require 'jwt'
 class Api::V1::AuthController < ApplicationController
 
   def create
-    user = User.find_by(username: login_user_params[:username])
-    if user && user.authenticate(login_user_params[:password])
-      token = JWT.encode({user_id: user.id}, 'SECRET')
-      render json: {user: user, jwt: token}
-      render json: {error: ""}, status: 400
+    # byebug
+    @user = User.find_by(username: login_user_params[:username])
+    # byebug
+    if @user && @user.authenticate(login_user_params[:password])
+      token = issue_token({user_id: @user.id})
+      render json: {user: @user, jwt: token}
+    else
+      render json: {error: "WRONG WRONG WRONG"}, status: 400
     end
   end
 
   def show
+    # byebug
     if current_user
       render json: {user: current_user}
     else
