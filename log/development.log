@@ -4004,3 +4004,1105 @@ Processing by Api::V1::AuthController#create as JSON
 Completed 200 OK in 80ms (Views: 1.4ms | ActiveRecord: 0.5ms)
 
 
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 12:16:09 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:50
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:50
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:50
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.44ms)
+Completed 200 OK in 13ms (Views: 2.3ms | ActiveRecord: 7.9ms)
+
+
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 12:19:33 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.61ms)
+Completed 200 OK in 82ms (Views: 10.4ms | ActiveRecord: 48.4ms)
+
+
+Started POST "/api/v1/login" for ::1 at 2018-12-29 12:19:36 -0500
+Processing by Api::V1::AuthController#create as JSON
+  Parameters: {"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "NotCool"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.45ms)
+Completed 200 OK in 84ms (Views: 1.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 12:30:16 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.6ms)
+Completed 200 OK in 23ms (Views: 2.4ms | ActiveRecord: 16.9ms)
+
+
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 12:45:17 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.48ms)
+Completed 200 OK in 13ms (Views: 1.8ms | ActiveRecord: 8.2ms)
+
+
+Started POST "/api/v1/login" for ::1 at 2018-12-29 12:45:20 -0500
+Processing by Api::V1::AuthController#create as JSON
+  Parameters: {"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "NotCool"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.45ms)
+Completed 200 OK in 70ms (Views: 1.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 12:45:32 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.49ms)
+Completed 200 OK in 6ms (Views: 1.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 12:54:44 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.55ms)
+Completed 200 OK in 21ms (Views: 2.8ms | ActiveRecord: 14.4ms)
+
+
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 12:56:06 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.45ms)
+Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 12:56:29 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.32ms)
+Completed 200 OK in 5ms (Views: 1.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 13:02:16 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.32ms)
+Completed 200 OK in 4ms (Views: 1.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 13:04:22 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.33ms)
+Completed 200 OK in 4ms (Views: 1.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 13:09:49 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.45ms)
+Completed 200 OK in 17ms (Views: 2.2ms | ActiveRecord: 11.4ms)
+
+
+Started POST "/api/v1/login" for ::1 at 2018-12-29 13:09:52 -0500
+Processing by Api::V1::AuthController#create as JSON
+  Parameters: {"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}, "auth"=>{"user"=>{"username"=>"NotCool", "password"=>"[FILTERED]"}}}
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "NotCool"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auth_controller.rb:7
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.44ms)
+Completed 200 OK in 70ms (Views: 1.0ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/api/v1/users" for ::1 at 2018-12-29 13:10:46 -0500
+Processing by Api::V1::UsersController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers]   [1m[36mActivity Load (2.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "user_activities" ON "activities"."id" = "user_activities"."activity_id" WHERE "user_activities"."user_id" = $1[0m  [["user_id", 7]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers]   [1m[36mActivity Load (0.7ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "user_activities" ON "activities"."id" = "user_activities"."activity_id" WHERE "user_activities"."user_id" = $1[0m  [["user_id", 8]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers]   [1m[36mActivity Load (0.6ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "user_activities" ON "activities"."id" = "user_activities"."activity_id" WHERE "user_activities"."user_id" = $1[0m  [["user_id", 9]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (34.91ms)
+Completed 200 OK in 39ms (Views: 21.0ms | ActiveRecord: 17.5ms)
+
+
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 13:11:19 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.55ms)
+Completed 200 OK in 6ms (Views: 2.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/users" for ::1 at 2018-12-29 14:27:04 -0500
+Processing by Api::V1::UsersController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers]   [1m[36mActivity Load (1.6ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "user_activities" ON "activities"."id" = "user_activities"."activity_id" WHERE "user_activities"."user_id" = $1[0m  [["user_id", 7]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers]   [1m[36mActivity Load (0.5ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "user_activities" ON "activities"."id" = "user_activities"."activity_id" WHERE "user_activities"."user_id" = $1[0m  [["user_id", 8]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers]   [1m[36mActivity Load (0.7ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "user_activities" ON "activities"."id" = "user_activities"."activity_id" WHERE "user_activities"."user_id" = $1[0m  [["user_id", 9]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (13.52ms)
+Completed 200 OK in 24ms (Views: 9.3ms | ActiveRecord: 14.0ms)
+
+
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 14:27:11 -0500
+Processing by Api::V1::AuthController#show as HTML
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.12ms)
+Completed 422 Unprocessable Entity in 1ms (Views: 1.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 14:49:27 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.34ms)
+Completed 200 OK in 11ms (Views: 1.2ms | ActiveRecord: 7.3ms)
+
+
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 15:45:41 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.4ms)
+Completed 200 OK in 47ms (Views: 8.9ms | ActiveRecord: 19.6ms)
+
+
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 16:00:32 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.41ms)
+Completed 200 OK in 14ms (Views: 1.4ms | ActiveRecord: 9.8ms)
+
+
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 16:00:48 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.61ms)
+Completed 200 OK in 7ms (Views: 3.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 17:57:57 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (44.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (5.28ms)
+Completed 200 OK in 284ms (Views: 31.9ms | ActiveRecord: 176.4ms)
+
+
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 17:59:51 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.37ms)
+Completed 200 OK in 6ms (Views: 2.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 18:00:56 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.53ms)
+Completed 200 OK in 5ms (Views: 2.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 18:01:05 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.7ms)
+Completed 200 OK in 6ms (Views: 2.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 18:19:43 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.74ms)
+Completed 200 OK in 60ms (Views: 25.2ms | ActiveRecord: 16.5ms)
+
+
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 18:34:12 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.29ms)
+Completed 200 OK in 12ms (Views: 1.9ms | ActiveRecord: 7.7ms)
+
+
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 18:35:26 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.29ms)
+Completed 200 OK in 4ms (Views: 1.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 18:37:05 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.54ms)
+Completed 200 OK in 6ms (Views: 2.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 18:37:20 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.37ms)
+Completed 200 OK in 5ms (Views: 2.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 18:37:40 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.29ms)
+Completed 200 OK in 4ms (Views: 1.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 18:47:41 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.35ms)
+Completed 200 OK in 12ms (Views: 1.7ms | ActiveRecord: 7.3ms)
+
+
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 18:48:41 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.35ms)
+Completed 200 OK in 6ms (Views: 1.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 21:06:19 -0500
+Processing by Api::V1::AuthController#show as HTML
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.1ms)
+Completed 422 Unprocessable Entity in 5ms (Views: 4.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 21:06:25 -0500
+Processing by Api::V1::AuthController#show as HTML
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.06ms)
+Completed 422 Unprocessable Entity in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 21:06:29 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.41ms)
+Completed 200 OK in 31ms (Views: 1.9ms | ActiveRecord: 16.1ms)
+
+
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 21:07:29 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.52ms)
+Completed 200 OK in 6ms (Views: 2.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 21:07:34 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.3ms)
+Completed 200 OK in 5ms (Views: 1.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 21:07:50 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.34ms)
+Completed 200 OK in 4ms (Views: 1.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 21:12:42 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.48ms)
+Completed 200 OK in 31ms (Views: 7.0ms | ActiveRecord: 8.8ms)
+
+
+Started POST "/api/v1/selected_activity" for ::1 at 2018-12-29 21:14:47 -0500
+Processing by Api::V1::ActivitiesController#create as */*
+  Parameters: {"activity"=>"Go to a local thrift shop"}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `permit' for "Go to a local thrift shop":String):
+  
+app/controllers/api/v1/activities_controller.rb:20:in `activity_params'
+app/controllers/api/v1/activities_controller.rb:4:in `create'
+Started POST "/api/v1/selected_activity" for ::1 at 2018-12-29 21:16:02 -0500
+Processing by Api::V1::ActivitiesController#create as */*
+  Parameters: {"activity"=>"Learn how the internet works"}
+Completed 500 Internal Server Error in 83176ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `permit' for "Learn how the internet works":String):
+  
+app/controllers/api/v1/activities_controller.rb:21:in `activity_params'
+app/controllers/api/v1/activities_controller.rb:5:in `create'
+Started POST "/api/v1/selected_activity" for ::1 at 2018-12-29 21:17:29 -0500
+Processing by Api::V1::ActivitiesController#create as */*
+  Parameters: {"activity"=>"Create or update your resume"}
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 21:18:13 -0500
+  [1m[36mActivity Load (51.1ms)[0m  [1m[34mSELECT  "activities".* FROM "activities" WHERE (Create or update your resume) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/v1/activities_controller.rb:5
+Completed 500 Internal Server Error in 44308ms (ActiveRecord: 51.1ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::SyntaxError: ERROR:  syntax error at or near "Create"
+LINE 1: SELECT  "activities".* FROM "activities" WHERE (Create or up...
+                                                        ^
+: SELECT  "activities".* FROM "activities" WHERE (Create or update your resume) LIMIT $1):
+  
+app/controllers/api/v1/activities_controller.rb:5:in `create'
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.38ms)
+Completed 200 OK in 28ms (Views: 6.6ms | ActiveRecord: 6.6ms)
+
+
+Started POST "/api/v1/selected_activity" for ::1 at 2018-12-29 21:18:58 -0500
+Processing by Api::V1::ActivitiesController#create as */*
+  Parameters: {"activity"=>"Donate blood at a local blood center", "category"=>"charity"}
+  [1m[36mActivity Load (0.8ms)[0m  [1m[34mSELECT  "activities".* FROM "activities" WHERE (Donate blood at a local blood center) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/v1/activities_controller.rb:5
+Completed 500 Internal Server Error in 402709ms (ActiveRecord: 0.8ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::SyntaxError: ERROR:  syntax error at or near "blood"
+LINE 1: ...T  "activities".* FROM "activities" WHERE (Donate blood at a...
+                                                             ^
+: SELECT  "activities".* FROM "activities" WHERE (Donate blood at a local blood center) LIMIT $1):
+Started GET "/api/v1/user_activities" for ::1 at 2018-12-29 21:25:41 -0500
+Started GET "/activities" for ::1 at 2018-12-29 21:25:41 -0500
+  
+Started GET "/api/v1/users" for ::1 at 2018-12-29 21:25:41 -0500
+Started GET "/api/v1/activities" for ::1 at 2018-12-29 21:25:41 -0500
+app/controllers/api/v1/activities_controller.rb:5:in `create'
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for Api::V1::ActivitiesController):
+  
+actionpack (5.2.2) lib/abstract_controller/base.rb:129:in `process'
+actionpack (5.2.2) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.2) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+activerecord (5.2.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+  
+ActionController::RoutingError (No route matches [GET] "/activities"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+  
+Processing by Api::V1::UsersController#index as HTML
+LoadError (Unable to autoload constant Api::V1::UserActivitiesController, expected /Users/carsonrey/BoredAF-NY/backend-bored-af-ny/app/controllers/api/v1/user_activities_controller.rb to define it):
+  
+activesupport (5.2.2) lib/active_support/dependencies.rb:511:in `load_missing_constant'
+bootsnap (1.3.2) lib/bootsnap/load_path_cache/core_ext/active_support.rb:58:in `block in load_missing_constant'
+bootsnap (1.3.2) lib/bootsnap/load_path_cache/core_ext/active_support.rb:16:in `allow_bootsnap_retry'
+bootsnap (1.3.2) lib/bootsnap/load_path_cache/core_ext/active_support.rb:57:in `load_missing_constant'
+activesupport (5.2.2) lib/active_support/dependencies.rb:195:in `const_missing'
+activesupport (5.2.2) lib/active_support/inflector/methods.rb:285:in `const_get'
+activesupport (5.2.2) lib/active_support/inflector/methods.rb:285:in `block in constantize'
+activesupport (5.2.2) lib/active_support/inflector/methods.rb:281:in `each'
+activesupport (5.2.2) lib/active_support/inflector/methods.rb:281:in `inject'
+activesupport (5.2.2) lib/active_support/inflector/methods.rb:281:in `constantize'
+activesupport (5.2.2) lib/active_support/dependencies.rb:582:in `get'
+activesupport (5.2.2) lib/active_support/dependencies.rb:613:in `constantize'
+actionpack (5.2.2) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (5.2.2) lib/action_dispatch/http/parameters.rb:101:in `binary_params_for?'
+actionpack (5.2.2) lib/action_dispatch/http/parameters.rb:92:in `set_binary_encoding'
+actionpack (5.2.2) lib/action_dispatch/http/parameters.rb:69:in `path_parameters='
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+activerecord (5.2.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers]   [1m[36mActivity Load (1.6ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "user_activities" ON "activities"."id" = "user_activities"."activity_id" WHERE "user_activities"."user_id" = $1[0m  [["user_id", 7]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers]   [1m[36mActivity Load (0.8ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "user_activities" ON "activities"."id" = "user_activities"."activity_id" WHERE "user_activities"."user_id" = $1[0m  [["user_id", 8]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers]   [1m[36mActivity Load (0.8ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "user_activities" ON "activities"."id" = "user_activities"."activity_id" WHERE "user_activities"."user_id" = $1[0m  [["user_id", 9]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (36.09ms)
+Completed 200 OK in 272ms (Views: 228.2ms | ActiveRecord: 43.0ms)
+
+
+Started GET "/api/v1/activities" for ::1 at 2018-12-29 21:26:51 -0500
+Processing by Api::V1::ActivitiesController#index as HTML
+  [1m[36mActivity Load (1.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/controllers/api/v1/activities_controller.rb:5
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.07ms)
+Completed 200 OK in 12ms (Views: 1.7ms | ActiveRecord: 6.6ms)
+
+
+Started POST "/api/v1/selected_activity" for ::1 at 2018-12-29 21:27:12 -0500
+Processing by Api::V1::ActivitiesController#create as */*
+  Parameters: {"activity"=>"Clean out your garage", "category"=>"busywork"}
+  [1m[36mActivity Load (0.5ms)[0m  [1m[34mSELECT  "activities".* FROM "activities" WHERE (Clean out your garage) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/v1/activities_controller.rb:10
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::SyntaxError: ERROR:  syntax error at or near "out"
+LINE 1: ...CT  "activities".* FROM "activities" WHERE (Clean out your g...
+                                                             ^
+: SELECT  "activities".* FROM "activities" WHERE (Clean out your garage) LIMIT $1):
+  
+app/controllers/api/v1/activities_controller.rb:10:in `create'
+Started POST "/api/v1/selected_activity" for ::1 at 2018-12-29 21:36:09 -0500
+Processing by Api::V1::ActivitiesController#create as */*
+  Parameters: {"activity"=>"Create a personal website", "category"=>"recreational"}
+  [1m[36mActivity Load (0.4ms)[0m  [1m[34mSELECT  "activities".* FROM "activities" WHERE (Create a personal website) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/v1/activities_controller.rb:9
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::SyntaxError: ERROR:  syntax error at or near "Create"
+LINE 1: SELECT  "activities".* FROM "activities" WHERE (Create a per...
+                                                        ^
+: SELECT  "activities".* FROM "activities" WHERE (Create a personal website) LIMIT $1):
+  
+app/controllers/api/v1/activities_controller.rb:9:in `create'
+Started POST "/api/v1/selected_activity" for ::1 at 2018-12-29 21:37:18 -0500
+Processing by Api::V1::ActivitiesController#create as */*
+  Parameters: {"activity"=>"Text a friend you haven't talked to in a long time", "category"=>"social"}
+Completed 500 Internal Server Error in 34765ms (ActiveRecord: 0.0ms)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `params'
+app/controllers/api/v1/activities_controller.rb:10:in `create'
+Started POST "/api/v1/selected_activity" for ::1 at 2018-12-29 21:37:58 -0500
+Processing by Api::V1::ActivitiesController#create as */*
+  Parameters: {"activity"=>"Pick up litter around your favorite park", "category"=>"charity"}
+  [1m[36mActivity Load (0.6ms)[0m  [1m[34mSELECT  "activities".* FROM "activities" WHERE "activities"."activity" = $1 LIMIT $2[0m  [["activity", "Pick up litter around your favorite park"], ["LIMIT", 1]]
+  ↳ (byebug):1
+  [1m[36mCACHE Activity Load (0.0ms)[0m  [1m[34mSELECT  "activities".* FROM "activities" WHERE "activities"."activity" = $1 LIMIT $2[0m  [["activity", "Pick up litter around your favorite park"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/activities_controller.rb:10
+Started POST "/api/v1/selected_activity" for ::1 at 2018-12-29 21:48:08 -0500
+Completed 500 Internal Server Error in 609396ms (ActiveRecord: 8.8ms)
+
+
+  
+NameError (undefined local variable or method `activity_params' for #<Api::V1::ActivitiesController:0x00007febb26262b8>):
+  
+app/controllers/api/v1/activities_controller.rb:14:in `create'
+Processing by Api::V1::ActivitiesController#create as */*
+  Parameters: {"activity"=>"Read a formal research paper on an interesting subject", "category"=>"recreational"}
+  [1m[36mActivity Load (1.0ms)[0m  [1m[34mSELECT  "activities".* FROM "activities" WHERE (Read a formal research paper on an interesting subject) LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/v1/activities_controller.rb:10
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 1.0ms)
+
+
+  
+ActiveRecord::StatementInvalid (PG::SyntaxError: ERROR:  syntax error at or near "a"
+LINE 1: ...ECT  "activities".* FROM "activities" WHERE (Read a formal r...
+                                                             ^
+: SELECT  "activities".* FROM "activities" WHERE (Read a formal research paper on an interesting subject) LIMIT $1):
+  
+app/controllers/api/v1/activities_controller.rb:10:in `create'
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8169983195745305340)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to FixColumnName (20181230025241)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (47.2ms)[0m  [1m[35mALTER TABLE "activities" RENAME COLUMN "type" TO "category"[0m
+  ↳ db/migrate/20181230025241_fix_column_name.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (2.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181230025241"]]
+  ↳ bin/rails:9
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (42.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(8169983195745305340)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActivity Create (8.9ms)[0m  [1m[32mINSERT INTO "activities" ("activity", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["activity", "Read a formal research paper on an interesting subject"], ["category", "recreational"], ["created_at", "2018-12-30 02:54:10.667939"], ["updated_at", "2018-12-30 02:54:10.667939"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/api/v1/activities" for ::1 at 2018-12-29 21:54:18 -0500
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/carsonrey/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::ActivitiesController#index as HTML
+  [1m[36mActivity Load (1.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/controllers/api/v1/activities_controller.rb:5
+[active_model_serializers]   [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_activities" ON "users"."id" = "user_activities"."user_id" WHERE "user_activities"."activity_id" = $1[0m  [["activity_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/activities_controller.rb:5
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (20.36ms)
+Completed 200 OK in 46ms (Views: 21.6ms | ActiveRecord: 21.8ms)
+
+
+  [1m[36mActivity Load (0.5ms)[0m  [1m[34mSELECT  "activities".* FROM "activities" WHERE "activities"."activity" = $1 LIMIT $2[0m  [["activity", "Read a formal research paper on an interesting subject"], ["LIMIT", 1]]
+Started GET "/api/v1/activities" for ::1 at 2018-12-29 21:56:03 -0500
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/carsonrey/.rvm/gems/ruby-2.5.3/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by Api::V1::ActivitiesController#index as HTML
+  [1m[36mActivity Load (1.1ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/controllers/api/v1/activities_controller.rb:5
+[active_model_serializers]   [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_activities" ON "users"."id" = "user_activities"."user_id" WHERE "user_activities"."activity_id" = $1[0m  [["activity_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/activities_controller.rb:5
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (51.05ms)
+Completed 200 OK in 96ms (Views: 72.4ms | ActiveRecord: 19.7ms)
+
+
+Started POST "/api/v1/selected_activity" for ::1 at 2018-12-29 21:56:07 -0500
+Processing by Api::V1::ActivitiesController#create as */*
+  Parameters: {"activity"=>"Bake pastries for you and your neighbor", "category"=>"cooking"}
+  [1m[36mActivity Load (0.6ms)[0m  [1m[34mSELECT  "activities".* FROM "activities" WHERE "activities"."activity" = $1 LIMIT $2[0m  [["activity", "Bake pastries for you and your neighbor"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/activities_controller.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/activities_controller.rb:14
+  [1m[36mActivity Create (1.0ms)[0m  [1m[32mINSERT INTO "activities" ("activity", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["activity", "Bake pastries for you and your neighbor"], ["category", "cooking"], ["created_at", "2018-12-30 02:56:07.302505"], ["updated_at", "2018-12-30 02:56:07.302505"]]
+  ↳ app/controllers/api/v1/activities_controller.rb:14
+  [1m[35m (6.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/activities_controller.rb:14
+[active_model_serializers]   [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_activities" ON "users"."id" = "user_activities"."user_id" WHERE "user_activities"."activity_id" = $1[0m  [["activity_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/v1/activities_controller.rb:16
+[active_model_serializers] Rendered ActivitySerializer with ActiveModelSerializers::Adapter::Attributes (5.42ms)
+Completed 200 OK in 23ms (Views: 5.1ms | ActiveRecord: 9.3ms)
+
+
+Started GET "/api/v1/activities" for ::1 at 2018-12-29 21:56:38 -0500
+Processing by Api::V1::ActivitiesController#index as HTML
+  [1m[36mActivity Load (0.5ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/controllers/api/v1/activities_controller.rb:5
+[active_model_serializers]   [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_activities" ON "users"."id" = "user_activities"."user_id" WHERE "user_activities"."activity_id" = $1[0m  [["activity_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/activities_controller.rb:5
+[active_model_serializers]   [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_activities" ON "users"."id" = "user_activities"."user_id" WHERE "user_activities"."activity_id" = $1[0m  [["activity_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/v1/activities_controller.rb:5
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (9.4ms)
+Completed 200 OK in 12ms (Views: 9.9ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/api/v1/users" for ::1 at 2018-12-29 21:58:17 -0500
+Processing by Api::V1::UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers]   [1m[36mActivity Load (0.6ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "user_activities" ON "activities"."id" = "user_activities"."activity_id" WHERE "user_activities"."user_id" = $1[0m  [["user_id", 7]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers]   [1m[36mActivity Load (0.6ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "user_activities" ON "activities"."id" = "user_activities"."activity_id" WHERE "user_activities"."user_id" = $1[0m  [["user_id", 8]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers]   [1m[36mActivity Load (0.6ms)[0m  [1m[34mSELECT "activities".* FROM "activities" INNER JOIN "user_activities" ON "activities"."id" = "user_activities"."activity_id" WHERE "user_activities"."user_id" = $1[0m  [["user_id", 9]]
+[active_model_serializers]   ↳ app/controllers/api/v1/users_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (29.5ms)
+Completed 200 OK in 61ms (Views: 35.4ms | ActiveRecord: 17.5ms)
+
+
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 22:12:37 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.6ms)
+Completed 200 OK in 27ms (Views: 10.3ms | ActiveRecord: 11.8ms)
+
+
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 22:12:56 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.44ms)
+Completed 200 OK in 6ms (Views: 1.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 22:15:05 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.43ms)
+Completed 200 OK in 5ms (Views: 1.8ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/api/v1/selected_activity" for ::1 at 2018-12-29 22:15:09 -0500
+  
+AbstractController::ActionNotFound (The action 'findfind_or_create_activity' could not be found for Api::V1::ActivitiesController):
+  
+actionpack (5.2.2) lib/abstract_controller/base.rb:129:in `process'
+actionpack (5.2.2) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.2) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+activerecord (5.2.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/api/v1/activities" for ::1 at 2018-12-29 22:15:43 -0500
+Processing by Api::V1::ActivitiesController#index as HTML
+  [1m[36mActivity Load (0.8ms)[0m  [1m[34mSELECT "activities".* FROM "activities"[0m
+  ↳ app/controllers/api/v1/activities_controller.rb:5
+[active_model_serializers]   [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_activities" ON "users"."id" = "user_activities"."user_id" WHERE "user_activities"."activity_id" = $1[0m  [["activity_id", 1]]
+[active_model_serializers]   ↳ app/controllers/api/v1/activities_controller.rb:5
+[active_model_serializers]   [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_activities" ON "users"."id" = "user_activities"."user_id" WHERE "user_activities"."activity_id" = $1[0m  [["activity_id", 2]]
+[active_model_serializers]   ↳ app/controllers/api/v1/activities_controller.rb:5
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (21.43ms)
+Completed 200 OK in 43ms (Views: 22.4ms | ActiveRecord: 17.6ms)
+
+
+Started POST "/api/v1/selected_activity" for ::1 at 2018-12-29 22:16:06 -0500
+Processing by Api::V1::ActivitiesController#find_or_create_activity as */*
+  Parameters: {"activity"=>"Memorize the fifty states and their capitals", "category"=>"busywork"}
+  [1m[36mActivity Load (0.9ms)[0m  [1m[34mSELECT  "activities".* FROM "activities" WHERE "activities"."activity" = $1 LIMIT $2[0m  [["activity", "Memorize the fifty states and their capitals"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/activities_controller.rb:10
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/activities_controller.rb:14
+  [1m[36mActivity Create (0.8ms)[0m  [1m[32mINSERT INTO "activities" ("activity", "category", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["activity", "Memorize the fifty states and their capitals"], ["category", "busywork"], ["created_at", "2018-12-30 03:16:06.179165"], ["updated_at", "2018-12-30 03:16:06.179165"]]
+  ↳ app/controllers/api/v1/activities_controller.rb:14
+  [1m[35m (39.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/v1/activities_controller.rb:14
+[active_model_serializers]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "user_activities" ON "users"."id" = "user_activities"."user_id" WHERE "user_activities"."activity_id" = $1[0m  [["activity_id", 3]]
+[active_model_serializers]   ↳ app/controllers/api/v1/activities_controller.rb:16
+[active_model_serializers] Rendered ActivitySerializer with ActiveModelSerializers::Adapter::Attributes (19.61ms)
+Completed 200 OK in 87ms (Views: 11.9ms | ActiveRecord: 61.4ms)
+
+
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 22:29:29 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.59ms)
+Completed 200 OK in 29ms (Views: 10.7ms | ActiveRecord: 9.9ms)
+
+
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 22:32:18 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.51ms)
+Completed 200 OK in 6ms (Views: 2.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 22:33:40 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.48ms)
+Completed 200 OK in 5ms (Views: 2.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/user_activities" for ::1 at 2018-12-29 22:46:27 -0500
+  
+LoadError (Unable to autoload constant Api::V1::UserActivitiesController, expected /Users/carsonrey/BoredAF-NY/backend-bored-af-ny/app/controllers/api/v1/user_activities_controller.rb to define it):
+  
+activesupport (5.2.2) lib/active_support/dependencies.rb:511:in `load_missing_constant'
+bootsnap (1.3.2) lib/bootsnap/load_path_cache/core_ext/active_support.rb:58:in `block in load_missing_constant'
+bootsnap (1.3.2) lib/bootsnap/load_path_cache/core_ext/active_support.rb:16:in `allow_bootsnap_retry'
+bootsnap (1.3.2) lib/bootsnap/load_path_cache/core_ext/active_support.rb:57:in `load_missing_constant'
+activesupport (5.2.2) lib/active_support/dependencies.rb:195:in `const_missing'
+activesupport (5.2.2) lib/active_support/inflector/methods.rb:285:in `const_get'
+activesupport (5.2.2) lib/active_support/inflector/methods.rb:285:in `block in constantize'
+activesupport (5.2.2) lib/active_support/inflector/methods.rb:281:in `each'
+activesupport (5.2.2) lib/active_support/inflector/methods.rb:281:in `inject'
+activesupport (5.2.2) lib/active_support/inflector/methods.rb:281:in `constantize'
+activesupport (5.2.2) lib/active_support/dependencies.rb:582:in `get'
+activesupport (5.2.2) lib/active_support/dependencies.rb:613:in `constantize'
+actionpack (5.2.2) lib/action_dispatch/http/request.rb:88:in `controller_class_for'
+actionpack (5.2.2) lib/action_dispatch/http/parameters.rb:101:in `binary_params_for?'
+actionpack (5.2.2) lib/action_dispatch/http/parameters.rb:92:in `set_binary_encoding'
+actionpack (5.2.2) lib/action_dispatch/http/parameters.rb:69:in `path_parameters='
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.2) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.2) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+activerecord (5.2.2) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.2) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.2) lib/rack/cors.rb:97:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/api/v1/user_activities" for ::1 at 2018-12-29 22:46:57 -0500
+Processing by Api::V1::UserActivitiesController#index as HTML
+  [1m[36mUserActivity Load (1.4ms)[0m  [1m[34mSELECT "user_activities".* FROM "user_activities"[0m
+  ↳ app/controllers/api/v1/user_activities_controller.rb:6
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (0.07ms)
+Completed 200 OK in 13ms (Views: 2.0ms | ActiveRecord: 8.1ms)
+
+
+Started GET "/api/v1/current_user" for ::1 at 2018-12-29 22:58:54 -0500
+Processing by Api::V1::AuthController#show as */*
+  Parameters: {"auth"=>{}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:19
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.37ms)
+Completed 200 OK in 32ms (Views: 6.1ms | ActiveRecord: 12.5ms)
+
+

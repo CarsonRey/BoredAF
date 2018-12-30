@@ -5,6 +5,7 @@ Rails.application.routes.draw do
       resources :activities
       resources :users
       # , only: [:create]
+      post '/selected_activity', to: 'activities#find_or_create_activity'
       get '/current_user', to: "auth#show"
       post '/login', to: 'auth#create'
     end
