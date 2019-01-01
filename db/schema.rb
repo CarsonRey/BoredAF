@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_30_025241) do
+ActiveRecord::Schema.define(version: 2019_01_01_173617) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,12 +25,26 @@ ActiveRecord::Schema.define(version: 2018_12_30_025241) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "journals", force: :cascade do |t|
+    t.string "date"
+    t.string "participants"
+    t.string "learned"
+    t.string "favorite_part"
+    t.string "least_favorite"
+    t.boolean "would_do_again", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_journals_on_user_id"
+  end
+
   create_table "user_activities", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "activity_id"
     t.boolean "tried", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "journaled", default: false
     t.index ["activity_id"], name: "index_user_activities_on_activity_id"
     t.index ["user_id"], name: "index_user_activities_on_user_id"
   end
@@ -42,6 +56,7 @@ ActiveRecord::Schema.define(version: 2018_12_30_025241) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "journals", "users"
   add_foreign_key "user_activities", "activities"
   add_foreign_key "user_activities", "users"
 end
