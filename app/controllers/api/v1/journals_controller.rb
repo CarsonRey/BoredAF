@@ -5,10 +5,21 @@ class Api::V1::JournalsController < ApplicationController
   end
 
   def create
-    @journal = Journal.create(journal_params)
-    if @journal.valid?
+    @journal = Journal.new(journal_params)
+    if @journal.save
       render json: @journal
     end
+  end
+
+  def show
+    @journalEntry = Journal.find(params[:id])
+    render json: @journalEntry
+  end
+
+  def update
+    @journalEntry = Journal.find(params[:id])
+    @jouralEntry.update(journal_params)
+    render json: @journalEntry
   end
 
   def destroy
@@ -20,15 +31,7 @@ class Api::V1::JournalsController < ApplicationController
   private
 
   def journal_params
-    params.require(:journal).permit(:date, :participants, :learned, :favorite_part, :least_favorite, :would_do_again)
+    params.require(:journal).permit(:date, :participants, :learned, :favorite_part, :least_favorite, :would_do_again, :user_id, :activity_id)
   end
-
-  # t.string :date
-  # t.string :participants
-  # t.string :learned
-  # t.string  :favorite_part
-  # t.string :least_favorite
-  # t.boolean :would_do_again, default: false
-
 
 end

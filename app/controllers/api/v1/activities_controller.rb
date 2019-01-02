@@ -11,15 +11,17 @@ class Api::V1::ActivitiesController < ApplicationController
       @activity = Activity.find_by(activity: params[:activity])
       render json: @activity
     else
-      @activity = Activity.create(activity_params)
-      if @activity.valid?
+      @activity = Activity.new(activity_params)
+      if @activity.save
         render json: @activity
       end
     end
   end
 
+
+
   def activity_params
-    {activity: params["activity"], category: params["category"]}
+    {activity: params["activity"], category: params["category"], link: params["link"]}
   end
 
 

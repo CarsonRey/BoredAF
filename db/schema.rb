@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_01_173617) do
+ActiveRecord::Schema.define(version: 2019_01_02_041059) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +35,8 @@ ActiveRecord::Schema.define(version: 2019_01_01_173617) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
+    t.bigint "activity_id"
+    t.index ["activity_id"], name: "index_journals_on_activity_id"
     t.index ["user_id"], name: "index_journals_on_user_id"
   end
 
@@ -56,6 +58,7 @@ ActiveRecord::Schema.define(version: 2019_01_01_173617) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "journals", "activities"
   add_foreign_key "journals", "users"
   add_foreign_key "user_activities", "activities"
   add_foreign_key "user_activities", "users"
