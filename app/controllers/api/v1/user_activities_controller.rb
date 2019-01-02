@@ -12,7 +12,7 @@ class Api::V1::UserActivitiesController < ApplicationController
       render json: @relationship
     end
   end
-  
+
   def show
     @relationship = UserActivity.find(params[:id])
     render json: @relationship
@@ -21,7 +21,7 @@ class Api::V1::UserActivitiesController < ApplicationController
   def update
     # byebug
     @relationship = UserActivity.find(params[:id])
-    @relationship.update(tried: params[:tried])
+      @relationship.update(tried: params[:body][:tried], journaled: params[:body][:journaled])
     render json: @relationship
   end
 
@@ -35,7 +35,7 @@ class Api::V1::UserActivitiesController < ApplicationController
 private
 
   def relationship_params
-    {activity_id: params["activity_id"], user_id: params["user_id"], tried:params["tried"]}
+    {activity_id: params["activity_id"], user_id: params["user_id"], tried:params["tried"], journaled: params["journaled"] }
   end
 
 end

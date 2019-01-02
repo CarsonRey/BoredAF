@@ -7,7 +7,6 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def create
-    # byebug
    @user = User.create(user_params)
    if @user.valid?
      token = JWT.encode({user_id: @user.id}, 'SECRET')
@@ -16,6 +15,7 @@ class Api::V1::UsersController < ApplicationController
      render json: {error: "WRONG"}, status: 422
    end
   end
+
 
   def show
     @user = User.find(params[:id])
