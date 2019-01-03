@@ -2,11 +2,11 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-
       post '/delete_association/:id', to: 'user_activities#destroy'
       resources :user_activities
       resources :activities
       resources :users
+      post '/delete_journal_entry/:id', to: 'journals#destroy'
       resources :journals
       post '/selected_activity', to: 'activities#find_or_create_activity'
       get '/current_user', to: "auth#show"
