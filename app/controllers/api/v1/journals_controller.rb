@@ -17,9 +17,11 @@ class Api::V1::JournalsController < ApplicationController
   end
 
   def update
+    byebug
     @journalEntry = Journal.find(params[:id])
-    @jouralEntry.update(journal_params)
-    render json: @journalEntry
+    if @journalEntry.update(journal_params)
+      render json: @journalEntry
+    end
   end
 
   def destroy
