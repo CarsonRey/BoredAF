@@ -17,7 +17,7 @@ class Api::V1::JournalsController < ApplicationController
   end
 
   def update
-    byebug
+    # byebug
     @journalEntry = Journal.find(params[:id])
     if @journalEntry.update(journal_params)
       render json: @journalEntry
