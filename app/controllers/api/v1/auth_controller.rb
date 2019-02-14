@@ -10,7 +10,7 @@ class Api::V1::AuthController < ApplicationController
       token = issue_token({user_id: @user.id})
       render json: {user: @user, jwt: token}
     else
-      render json: {error: "WRONG WRONG WRONG"}, status: 400
+      render json: {error: "noUser"}, status: 400
     end
   end
 
@@ -18,8 +18,6 @@ class Api::V1::AuthController < ApplicationController
     # byebug
     if current_user
       render json: {user: current_user}
-    else
-      render json: {error: "some error"}, status: 422
     end
   end
 
