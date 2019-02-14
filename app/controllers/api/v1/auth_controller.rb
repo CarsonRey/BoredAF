@@ -18,6 +18,8 @@ class Api::V1::AuthController < ApplicationController
     # byebug
     if current_user
       render json: {user: current_user}
+    else
+      render json: {error: "some error"}, status: 422
     end
   end
 
